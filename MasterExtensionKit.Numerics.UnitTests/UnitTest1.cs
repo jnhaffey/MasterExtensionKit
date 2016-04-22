@@ -1,4 +1,5 @@
 ﻿using System;
+using MasterExtensionKit.Numerics.Checks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Numerics.UnitTests
@@ -9,6 +10,7 @@ namespace MasterExtensionKit.Numerics.UnitTests
 		[TestMethod]
 		public void TestMethod1()
 		{
+
 		}
 	}
 }

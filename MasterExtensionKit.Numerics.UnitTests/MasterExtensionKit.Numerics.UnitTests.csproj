@@ -53,6 +53,16 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MasterExtensionKit.Core\MasterExtensionKit.Core.csproj">
+      <Project>{29bda034-ef82-475f-8026-9889972dee1e}</Project>
+      <Name>MasterExtensionKit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasterExtensionKit.Numerics\MasterExtensionKit.Numerics.csproj">
+      <Project>{6ede5b9f-5f78-4b69-bb13-4ddc5381741c}</Project>
+      <Name>MasterExtensionKit.Numerics</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

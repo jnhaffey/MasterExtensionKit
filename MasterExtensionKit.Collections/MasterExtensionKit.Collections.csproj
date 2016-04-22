@@ -50,6 +50,12 @@
     <Folder Include="Checks\" />
     <Folder Include="Functions\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MasterExtensionKit.Core\MasterExtensionKit.Core.csproj">
+      <Project>{29bda034-ef82-475f-8026-9889972dee1e}</Project>
+      <Name>MasterExtensionKit.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
