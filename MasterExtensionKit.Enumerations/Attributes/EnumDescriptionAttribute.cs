@@ -14,12 +14,12 @@ namespace MasterExtensionKit.Enumerations.Attributes
 		/// <param name="value">String to hold</param>
 		public EnumDescriptionAttribute(string value)
 		{
-			Description = value;
+			EnumDescription = value;
 		}
 
 		/// <summary>
 		///     Holds a string value for an enumeration value
 		/// </summary>
-		public string Description { get; private set; }
+		public string EnumDescription { get; private set; }
 	}
 }

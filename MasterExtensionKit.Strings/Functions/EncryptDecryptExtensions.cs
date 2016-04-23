@@ -7,14 +7,20 @@ namespace MasterExtensionKit.Strings.Functions
 {
 	public static class EncryptDecryptExtensions
 	{
+		/// <summary>
+		///     Encrypts the given string using the provided key
+		/// </summary>
+		/// <param name="stringToEncrypt"></param>
+		/// <param name="key"></param>
+		/// <returns></returns>
 		public static string Encrypt(this string stringToEncrypt, string key)
 		{
-			if (string.IsNullOrEmpty(stringToEncrypt))
+			if (string.IsNullOrWhiteSpace(stringToEncrypt))
 			{
 				throw new ArgumentException("An empty string value cannot be encrypted.");
 			}
 
-			if (string.IsNullOrEmpty(key))
+			if (string.IsNullOrWhiteSpace(key))
 			{
 				throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.");
 			}
@@ -28,13 +34,19 @@ namespace MasterExtensionKit.Strings.Functions
 			return BitConverter.ToString(bytes);
 		}
 
+		/// <summary>
+		///     Decrypts the given string using the provided key
+		/// </summary>
+		/// <param name="stringToDecrypt"></param>
+		/// <param name="key"></param>
+		/// <returns></returns>
 		public static string Decrypt(this string stringToDecrypt, string key)
 		{
 			string result = null;
 
 			if (string.IsNullOrEmpty(stringToDecrypt))
 			{
-				throw new ArgumentException("An empty string value cannot be encrypted.");
+				throw new ArgumentException("An empty string value cannot be decrypted.");
 			}
 
 			if (string.IsNullOrEmpty(key))

@@ -5,6 +5,12 @@ namespace MasterExtensionKit.Strings.Functions
 {
 	public static class ToIntegerExtensions
 	{
+		/// <summary>
+		///     Convert a string to an integer
+		/// </summary>
+		/// <param name="value"></param>
+		/// <param name="ignoreError">Will ignore exceptions - Default: true</param>
+		/// <returns></returns>
 		public static int? ToInteger(this string value, bool ignoreError = true)
 		{
 			int? valueToReturn = null;
@@ -18,10 +24,7 @@ namespace MasterExtensionKit.Strings.Functions
 				{
 					return null;
 				}
-				else
-				{
-					throw new ConversionFailureException("Failed to convert string to interger", ex);
-				}
+				throw new ConversionFailureException("Failed to convert string to interger.", ex);
 			}
 			return valueToReturn;
 		}
