@@ -46,8 +46,9 @@
     <Compile Include="Checks\IsCheckExtensions.cs" />
     <Compile Include="Checks\IsValidPostalZipCode.cs" />
     <Compile Include="Functions\EncryptDecryptExtensions.cs" />
+    <Compile Include="Functions\ToHashExtension.cs" />
     <Compile Include="Functions\ToIntegerExtensions.cs" />
-    <Compile Include="Functions\ToTextStyles.cs" />
+    <Compile Include="Functions\ToTextStylesExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

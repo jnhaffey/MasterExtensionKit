@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace MasterExtensionKit.Strings.Functions
 {
-	public static class ToTextStyles
+	public static class ToTextStylesExtensions
 	{
 		/// <summary>
 		///     Converts the given string to Pascal Case Style
