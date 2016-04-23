@@ -52,7 +52,7 @@ namespace MasterExtensionKit.Strings.Checks
 		/// <returns></returns>
 		public static bool IsValidEmail(this string value, string format = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
 		{
-			var regex = new Regex(format);
+			var regex = new Regex(format, RegexOptions.IgnoreCase);
 			return regex.IsMatch(value);
 		}
 	}

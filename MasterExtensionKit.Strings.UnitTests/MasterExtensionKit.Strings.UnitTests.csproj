@@ -53,8 +53,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Checks\IsCheckExtensionsTests.cs" />
+    <Compile Include="Checks\IsValidPostalZipCodeUnitTest.cs" />
     <Compile Include="Functions\EncryptDecryptExtensionsTests.cs" />
     <Compile Include="Functions\ToIntegerExtensionsTests.cs" />
+    <Compile Include="Functions\ToTextStylesUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
