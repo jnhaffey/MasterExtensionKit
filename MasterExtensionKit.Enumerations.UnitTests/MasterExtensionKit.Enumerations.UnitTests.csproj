@@ -80,7 +80,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Functions\EnumDescriptionExtensionUnitTests.cs" />
+    <Compile Include="Functions\EnumGuidExtensionsUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MasterExtensionKit.Core\MasterExtensionKit.Core.csproj">

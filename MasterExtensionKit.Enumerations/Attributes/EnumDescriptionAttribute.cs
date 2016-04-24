@@ -5,7 +5,7 @@ namespace MasterExtensionKit.Enumerations.Attributes
 	/// <summary>
 	///     This attribute is used to represent a string value for a value in an enumeration
 	/// </summary>
-	[AttributeUsage(AttributeTargets.Field)]
+	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
 	public class EnumDescriptionAttribute : Attribute
 	{
 		/// <summary>

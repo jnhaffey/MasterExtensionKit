@@ -65,7 +65,9 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
+    <Compile Include="Attributes\EnumGuidAttribute.cs" />
     <Compile Include="Functions\EnumDescriptionExtension.cs" />
+    <Compile Include="Functions\EnumGuidExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
