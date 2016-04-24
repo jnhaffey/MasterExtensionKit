@@ -52,8 +52,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Checks\IsCheckExtensionsUnitTests.cs" />
-    <Compile Include="Functions\DateDifferenceExtensionsUnitTests.cs" />
+    <Compile Include="Functions\AgeExtensionUnitTests.cs" />
+    <Compile Include="Validations\IsWeekendExtensionUnitTests.cs" />
+    <Compile Include="Functions\AgeExtensionsUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

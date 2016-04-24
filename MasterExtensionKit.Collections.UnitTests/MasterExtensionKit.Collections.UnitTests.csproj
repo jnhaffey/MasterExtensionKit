@@ -50,7 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Functions\ShuffleEnumerableExtensionsTests.cs" />
+    <Compile Include="Functions\WhereIfEnumerableExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MasterExtensionKit.Collections\MasterExtensionKit.Collections.csproj">
@@ -64,8 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Checks\" />
-    <Folder Include="Functions\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Validations\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

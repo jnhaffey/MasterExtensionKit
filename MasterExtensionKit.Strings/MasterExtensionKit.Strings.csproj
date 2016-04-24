@@ -43,12 +43,15 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Checks\IsCheckExtensions.cs" />
-    <Compile Include="Checks\IsValidPostalZipCode.cs" />
+    <Compile Include="Enumerations\Country.cs" />
+    <Compile Include="Enumerations\HashType.cs" />
+    <Compile Include="Validations\IsNumericExtension.cs" />
+    <Compile Include="Validations\IsValidEmailExtension.cs" />
+    <Compile Include="Validations\IsValidPostalZipCode.cs" />
     <Compile Include="Functions\EncryptDecryptExtensions.cs" />
-    <Compile Include="Functions\ToHashExtension.cs" />
-    <Compile Include="Functions\ToIntegerExtensions.cs" />
-    <Compile Include="Functions\ToTextStylesExtensions.cs" />
+    <Compile Include="Converters\ToHashExtension.cs" />
+    <Compile Include="Converters\ToIntegerExtensions.cs" />
+    <Compile Include="Converters\ToTextStylesExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

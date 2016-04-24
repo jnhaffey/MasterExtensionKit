@@ -52,12 +52,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Checks\IsCheckExtensionsTests.cs" />
-    <Compile Include="Checks\IsValidPostalZipCodeUnitTest.cs" />
+    <Compile Include="TestData.cs" />
+    <Compile Include="Validations\IsNumericExtensionsTests.cs" />
+    <Compile Include="Validations\IsValidEmailExtensionTests.cs" />
+    <Compile Include="Validations\IsValidPostalZipCodeUnitTest.cs" />
     <Compile Include="Functions\EncryptDecryptExtensionsTests.cs" />
-    <Compile Include="Functions\ToIntegerExtensionsTests.cs" />
-    <Compile Include="Functions\ToTextStylesUnitTests.cs" />
-    <Compile Include="Functions\ToHashExtensionsUnitTest.cs" />
+    <Compile Include="Converters\ToIntegerExtensionsTests.cs" />
+    <Compile Include="Converters\ToTextStylesUnitTests.cs" />
+    <Compile Include="Converters\ToHashExtensionsUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

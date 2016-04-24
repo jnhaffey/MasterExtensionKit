@@ -43,12 +43,15 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Functions\ShuffleEnumerableExtensions.cs" />
+    <Compile Include="Functions\WhereIfEnumerableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Checks\" />
-    <Folder Include="Functions\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Enumerations\" />
+    <Folder Include="Validations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MasterExtensionKit.Core\MasterExtensionKit.Core.csproj">
