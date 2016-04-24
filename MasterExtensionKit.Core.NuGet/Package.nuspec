@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MasterExtensionKit.Core.NuGet</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>Master Extension Kit - Core</title>
 	<authors>Jason N. Haffey</authors>
 	<owners>Jason N. Haffey</owners>

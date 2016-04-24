@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MasterExtensionKit.Numerics.NuGet</id>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <title>Master Extension Kit - Numerics</title>
 	<authors>Jason N. Haffey</authors>
 	<owners>Jason N. Haffey</owners>
@@ -16,7 +16,7 @@
 	<licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
 	<copyright>Copyright 2016</copyright>
     <dependencies>
-	  <dependency id="MasterExtensionKit.Core.NuGet" version="(,1.0.0]" />
+	  <dependency id="MasterExtensionKit.Core.NuGet" version="[1.0.0,1.0.0]" />
     </dependencies>
     <references></references>
 	<frameworkAssemblies>

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MasterExtensionKit.Datetimes.NuGet</id>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <title>Master Extension Kit - Datetimes</title>
 	<authors>Jason N. Haffey</authors>
 	<owners>Jason N. Haffey</owners>
@@ -16,7 +16,7 @@
 	<licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
 	<copyright>Copyright 2016</copyright>
     <dependencies>
-	  <dependency id="MasterExtensionKit.Core.NuGet" version="(,1.0.0]" />
+	  <dependency id="MasterExtensionKit.Core.NuGet" version="[1.0.1,1.0.1]" />
     </dependencies>
     <references></references>
 	<frameworkAssemblies>
