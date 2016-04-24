@@ -9,10 +9,10 @@ Namespaces will be added as new extensions for different types/classes are added
 
 Be sure to read the page [Submitting to the Collection](https://github.com/jnhaffey/MasterExtensionKit/wiki/Submitting-to-the-Collection) before actually submitting any code.
 
-The Master Extension Kits are available as a NuGet Packages:  
-* [MasterExtenionKit.Collections]()  
-* [MasterExtenionKit.Datetimes]()  
-* [MasterExtenionKit.Enumerations]()  
-* [MasterExtenionKit.Numerics]()  
-* [MasterExtenionKit.Strings]()  
-* [MasterExtenionKit.Core]()  
+The Master Extension Kits are available as a NuGet Packages:
+* [MasterExtenionKit.Collections](https://www.nuget.org/packages/MasterExtensionKit.Collections.NuGet/)
+* [MasterExtenionKit.Datetimes](https://www.nuget.org/packages/MasterExtensionKit.Datetimes.NuGet/)
+* [MasterExtenionKit.Enumerations](https://www.nuget.org/packages/MasterExtensionKit.Enumerations.NuGet/)
+* [MasterExtenionKit.Numerics](https://www.nuget.org/packages/MasterExtensionKit.Numerics.NuGet/)
+* [MasterExtenionKit.Strings](https://www.nuget.org/packages/MasterExtensionKit.Strings.NuGet/)
+* [MasterExtenionKit.Core](https://www.nuget.org/packages/MasterExtensionKit.Core.NuGet/)
