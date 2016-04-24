@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Flavor=Debug")]
 #else
 [assembly: AssemblyConfiguration("Release")]
-[Assembly: AssemblyDescription("Flavor=RTM")]
+[assembly: AssemblyDescription("Flavor=RTM")]
 #endif
 [assembly: CLSCompliant(true)]
 

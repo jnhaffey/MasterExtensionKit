@@ -34,11 +34,39 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Numerics
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Strings.UnitTests", "MasterExtensionKit.Strings.UnitTests\MasterExtensionKit.Strings.UnitTests.csproj", "{189E4D75-AABC-45CC-BDEB-21A348BEED53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.NuGet", "MasterExtensionKit.NuGet\MasterExtensionKit.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{23E4A466-E763-4CB3-9231-E77CA97CFF72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGetPackages", "NuGetPackages", "{68E7189B-7B1E-41F2-81BF-C0C19F55138D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Collections.NuGet", "MasterExtensionKit.Collections.NuGet\MasterExtensionKit.Collections.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+	ProjectSection(ProjectDependencies) = postProject
+		{568088B6-B611-4094-B0EA-400174E58A70} = {568088B6-B611-4094-B0EA-400174E58A70}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Core.NuGet", "MasterExtensionKit.Core.NuGet\MasterExtensionKit.Core.NuGet.csproj", "{47ABFD00-CD96-4AFC-B781-B33001D0D58C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29BDA034-EF82-475F-8026-9889972DEE1E} = {29BDA034-EF82-475F-8026-9889972DEE1E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Datetimes.NuGet", "MasterExtensionKit.Datetimes.NuGet\MasterExtensionKit.Datetimes.NuGet.csproj", "{AD3E31F7-14B4-4D75-9885-5035C1499C21}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC5F75CF-1CE2-4635-8550-05C1765D52BB} = {DC5F75CF-1CE2-4635-8550-05C1765D52BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Enumerations.NuGet", "MasterExtensionKit.Enumerations.NuGet\MasterExtensionKit.Enumerations.NuGet.csproj", "{42A3FAA9-EAF1-49DF-A2B1-28E61121BA32}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A5BEFAF-FE38-4A52-82BE-929E3805C11B} = {0A5BEFAF-FE38-4A52-82BE-929E3805C11B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Numerics.NuGet", "MasterExtensionKit.Numerics.NuGet\MasterExtensionKit.Numerics.NuGet.csproj", "{64DE10CE-910C-4BDD-ABC8-FEA1AACFFF3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EDE5B9F-5F78-4B69-BB13-4DDC5381741C} = {6EDE5B9F-5F78-4B69-BB13-4DDC5381741C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterExtensionKit.Strings.NuGet", "MasterExtensionKit.Strings.NuGet\MasterExtensionKit.Strings.NuGet.csproj", "{9AB25450-4119-458D-8147-5D51BB28D7F6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25A9255C-885C-494A-B241-0AF2E1A57AC9} = {25A9255C-885C-494A-B241-0AF2E1A57AC9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,9 +119,23 @@ Global
 		{189E4D75-AABC-45CC-BDEB-21A348BEED53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{189E4D75-AABC-45CC-BDEB-21A348BEED53}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47ABFD00-CD96-4AFC-B781-B33001D0D58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47ABFD00-CD96-4AFC-B781-B33001D0D58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47ABFD00-CD96-4AFC-B781-B33001D0D58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3E31F7-14B4-4D75-9885-5035C1499C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3E31F7-14B4-4D75-9885-5035C1499C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3E31F7-14B4-4D75-9885-5035C1499C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A3FAA9-EAF1-49DF-A2B1-28E61121BA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A3FAA9-EAF1-49DF-A2B1-28E61121BA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A3FAA9-EAF1-49DF-A2B1-28E61121BA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DE10CE-910C-4BDD-ABC8-FEA1AACFFF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DE10CE-910C-4BDD-ABC8-FEA1AACFFF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DE10CE-910C-4BDD-ABC8-FEA1AACFFF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB25450-4119-458D-8147-5D51BB28D7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB25450-4119-458D-8147-5D51BB28D7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB25450-4119-458D-8147-5D51BB28D7F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +147,10 @@ Global
 		{7ECB5757-95A5-4625-B796-3F69C1120FD1} = {23E4A466-E763-4CB3-9231-E77CA97CFF72}
 		{189E4D75-AABC-45CC-BDEB-21A348BEED53} = {23E4A466-E763-4CB3-9231-E77CA97CFF72}
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
+		{47ABFD00-CD96-4AFC-B781-B33001D0D58C} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
+		{AD3E31F7-14B4-4D75-9885-5035C1499C21} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
+		{42A3FAA9-EAF1-49DF-A2B1-28E61121BA32} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
+		{64DE10CE-910C-4BDD-ABC8-FEA1AACFFF3B} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
+		{9AB25450-4119-458D-8147-5D51BB28D7F6} = {68E7189B-7B1E-41F2-81BF-C0C19F55138D}
 	EndGlobalSection
 EndGlobal
