@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MasterExtensionKit.Strings.UnitTests.Validations
 {
 	[TestClass]
-	public class IsValidPostalZipCodeUnitTest
+	public class IsValidPostalZipCodeExtensionUnitTest
 	{
 		#region US Postal Code Tests
 

@@ -66,8 +66,12 @@
     </Compile>
     <Compile Include="Enumerations\Country.cs" />
     <Compile Include="Enumerations\HashType.cs" />
+    <Compile Include="Converters\ToDateTimeExtension.cs" />
+    <Compile Include="Validations\HasValueExtension.cs" />
+    <Compile Include="Validations\IsGuidExtension.cs" />
     <Compile Include="Validations\IsNumericExtension.cs" />
     <Compile Include="Validations\IsValidEmailExtension.cs" />
+    <Compile Include="Validations\IsValidIpAddressExtension.cs" />
     <Compile Include="Validations\IsValidPostalZipCode.cs" />
     <Compile Include="Functions\EncryptDecryptExtensions.cs" />
     <Compile Include="Converters\ToHashExtension.cs" />
