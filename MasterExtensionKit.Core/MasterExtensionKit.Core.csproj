@@ -61,11 +61,45 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
+    <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
+    <Compile Include="Attributes\EnumGuidAttribute.cs" />
+    <Compile Include="Collections\Functions\ShuffleEnumerableExtensions.cs" />
+    <Compile Include="Collections\Functions\WhereIfEnumerableExtensions.cs" />
+    <Compile Include="Datetimes\Functions\AgeExtension.cs" />
+    <Compile Include="Datetimes\Functions\StartOfWeekExtensions.cs" />
+    <Compile Include="Datetimes\Validations\IsWeekendExtension.cs" />
+    <Compile Include="Enumerations\Country.cs" />
+    <Compile Include="Enums\Functions\EnumDescriptionExtension.cs" />
+    <Compile Include="Enums\Functions\EnumGuidExtensions.cs" />
+    <Compile Include="Enumerations\HashType.cs" />
     <Compile Include="Exceptions\ConversionFailureException.cs" />
+    <Compile Include="Numbers\Validations\IsEvenExtension.cs" />
+    <Compile Include="Numbers\Validations\IsGreaterThanExtensions.cs" />
+    <Compile Include="Numbers\Validations\IsGreaterThanOrEqualExtensions.cs" />
+    <Compile Include="Numbers\Validations\IsLessThanExtensions.cs" />
+    <Compile Include="Numbers\Validations\IsLessThanOrEqualExtensions.cs" />
+    <Compile Include="Numbers\Validations\IsOddExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\Converters\ToDateTimeExtension.cs" />
+    <Compile Include="Strings\Converters\ToHashExtension.cs" />
+    <Compile Include="Strings\Converters\ToIntegerExtensions.cs" />
+    <Compile Include="Strings\Converters\ToTextStylesExtensions.cs" />
+    <Compile Include="Strings\Functions\EncryptDecryptExtensions.cs" />
+    <Compile Include="Strings\Validations\HasValueExtension.cs" />
+    <Compile Include="Strings\Validations\IsGuidExtension.cs" />
+    <Compile Include="Strings\Validations\IsNumericExtension.cs" />
+    <Compile Include="Strings\Validations\IsValidEmailExtension.cs" />
+    <Compile Include="Strings\Validations\IsValidIpAddressExtension.cs" />
+    <Compile Include="Strings\Validations\IsValidPostalZipCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Collections\Converters\" />
+    <Folder Include="Collections\Validations\" />
+    <Folder Include="Datetimes\Converters\" />
+    <Folder Include="Enums\Converters\" />
+    <Folder Include="Enums\Validations\" />
+    <Folder Include="Numbers\Converters\" />
+    <Folder Include="Numbers\Functions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

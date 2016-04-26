@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F94E67C7-E0B9-4848-AD72-42A98C4AEC21}</ProjectGuid>
+    <ProjectGuid>{F0AB495A-31CB-4C4B-9F67-65965E8E472A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MasterExtensionKit.Collections.UnitTests</RootNamespace>
-    <AssemblyName>MasterExtensionKit.Collections.UnitTests</AssemblyName>
+    <RootNamespace>MasterExtensionKit.Core.UnitTests</RootNamespace>
+    <AssemblyName>MasterExtensionKit.Core.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,33 +34,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseWithoutNuGet|AnyCPU'">
-    <OutputPath>bin\ReleaseWithoutNuGet\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetRelease|AnyCPU'">
-    <OutputPath>bin\NuGetRelease\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetDebug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\NuGetDebug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
@@ -77,24 +50,55 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Functions\ShuffleEnumerableExtensionsTests.cs" />
-    <Compile Include="Functions\WhereIfEnumerableExtensionsTests.cs" />
+    <Compile Include="Collections\Functions\ShuffleEnumerableExtensionsTests.cs" />
+    <Compile Include="Collections\Functions\WhereIfEnumerableExtensionsTests.cs" />
+    <Compile Include="Datetimes\Functions\AgeExtensionsUnitTests.cs" />
+    <Compile Include="Datetimes\Functions\AgeExtensionUnitTests.cs" />
+    <Compile Include="Datetimes\Validations\IsWeekendExtensionUnitTests.cs" />
+    <Compile Include="Enums\Functions\EnumDescriptionExtensionUnitTests.cs" />
+    <Compile Include="Enums\Functions\EnumGuidExtensionsUnitTests.cs" />
+    <Compile Include="Numbers\Validations\IsEvenExtensionTests.cs" />
+    <Compile Include="Numbers\Validations\IsGreaterThanExtensionTests.cs" />
+    <Compile Include="Numbers\Validations\IsGreaterThanOrEqualExtensionTests.cs" />
+    <Compile Include="Numbers\Validations\IsLessThanExtensionTests.cs" />
+    <Compile Include="Numbers\Validations\IsLessThanOrEqualExtensionsTests.cs" />
+    <Compile Include="Numbers\Validations\IsOddExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\Converters\ToDateTimeExtensionUnitTest.cs" />
+    <Compile Include="Strings\Converters\ToHashExtensionsUnitTest.cs" />
+    <Compile Include="Strings\Converters\ToIntegerExtensionsTests.cs" />
+    <Compile Include="Strings\Converters\ToTextStylesUnitTests.cs" />
+    <Compile Include="Strings\Functions\EncryptDecryptExtensionsTests.cs" />
+    <Compile Include="Strings\Validations\HasValueExtensionUnitTest.cs" />
+    <Compile Include="Strings\Validations\IsGuidExtensionUnitTest.cs" />
+    <Compile Include="Strings\Validations\IsNumericExtensionsTests.cs" />
+    <Compile Include="Strings\Validations\IsValidEmailExtensionTests.cs" />
+    <Compile Include="Strings\Validations\IsValidIpAddressExtensionUnitTest.cs" />
+    <Compile Include="Strings\Validations\IsValidPostalZipCodeExtensionUnitTest.cs" />
+    <Compile Include="_Shared\TestCollectionData.cs" />
+    <Compile Include="_Shared\TestEnumData.cs" />
+    <Compile Include="_Shared\TestNumberData.cs" />
+    <Compile Include="_Shared\TestStringData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MasterExtensionKit.Collections\MasterExtensionKit.Collections.csproj">
-      <Project>{568088b6-b611-4094-b0ea-400174e58a70}</Project>
-      <Name>MasterExtensionKit.Collections</Name>
-    </ProjectReference>
+    <Folder Include="Collections\Attributes\" />
+    <Folder Include="Collections\Converters\" />
+    <Folder Include="Collections\Validations\" />
+    <Folder Include="Datetimes\Attributes\" />
+    <Folder Include="Datetimes\Converters\" />
+    <Folder Include="Enums\Attributes\" />
+    <Folder Include="Enums\Converters\" />
+    <Folder Include="Enums\Validations\" />
+    <Folder Include="Numbers\Attributes\" />
+    <Folder Include="Numbers\Converters\" />
+    <Folder Include="Numbers\Functions\" />
+    <Folder Include="Strings\Attributes\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MasterExtensionKit.Core\MasterExtensionKit.Core.csproj">
       <Project>{29bda034-ef82-475f-8026-9889972dee1e}</Project>
       <Name>MasterExtensionKit.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Attributes\" />
-    <Folder Include="Converters\" />
-    <Folder Include="Validations\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
