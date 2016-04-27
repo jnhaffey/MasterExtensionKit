@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using MasterExtensionKit.Core.Attributes;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Configuration;
 
 namespace MasterExtensionKit.Core.Enums.Functions
 {
@@ -25,8 +27,9 @@ namespace MasterExtensionKit.Core.Enums.Functions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="source"></param>
 		/// <param name="guid"></param>
+		/// <param name="ignoreError"></param>
 		/// <returns>Enum Value</returns>
-		public static T GetEnumValue<T>(this T source, Guid guid) where T : struct
+		public static T GetEnumValue<T>(this T source, Guid guid, bool ignoreError = true) where T : struct
 		{
 			var type = typeof (T);
 			var fieldInfo = type.GetFields();
@@ -43,7 +46,11 @@ namespace MasterExtensionKit.Core.Enums.Functions
 				Enum.TryParse(field.Name, out myEnum);
 				return myEnum;
 			}
-			throw new Exception();
+			if (ignoreError)
+			{
+				return default(T);
+			}
+			throw new EnumNotFoundFromGuidException(ErrorMessages.EnumNotFoundFromGuidError(guid));
 		}
 	}
 }

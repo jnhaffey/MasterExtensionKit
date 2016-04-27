@@ -5,11 +5,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <summary>
 		///     Checks if number is Even
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsEven(this int value)
+		public static bool IsEven(this int source)
 		{
-			return value%2 == 0;
+			return source%2 == 0;
 		}
 	}
 }

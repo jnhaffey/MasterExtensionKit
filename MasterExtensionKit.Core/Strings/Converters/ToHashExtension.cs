@@ -60,14 +60,14 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		/// <summary>
 		///     Computes the hash of the string using a specified hash algorithm
 		/// </summary>
-		/// <param name="input">The string to hash</param>
-		/// <param name="hashType">The hash algorithm to use</param>
+		/// <param name="source">The string to hash</param>
+		/// <param name="hashType">The hash algorithm to use (Default: MD5)</param>
 		/// <returns>The resulting hash or an empty string on error</returns>
-		public static string ComputeHash(this string input, HashType hashType)
+		public static string ComputeHash(this string source, HashType hashType = HashType.MD5)
 		{
 			try
 			{
-				var hash = GetHash(input, hashType);
+				var hash = GetHash(source, hashType);
 				var ret = new StringBuilder();
 
 				foreach (var t in hash)

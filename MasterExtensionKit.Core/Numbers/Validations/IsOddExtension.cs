@@ -5,11 +5,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <summary>
 		///     Checks if number is Odd
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsOdd(this int value)
+		public static bool IsOdd(this int source)
 		{
-			return !value.IsEven();
+			return !source.IsEven();
 		}
 	}
 }

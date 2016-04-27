@@ -45,7 +45,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -63,12 +65,18 @@
     <Compile Include="Numbers\Validations\IsLessThanExtensionTests.cs" />
     <Compile Include="Numbers\Validations\IsLessThanOrEqualExtensionsTests.cs" />
     <Compile Include="Numbers\Validations\IsOddExtensionTests.cs" />
+    <Compile Include="Objects\Validations\IsNullExtensionUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringBuilders\Functions\AppendIfExtensionUnitTests.cs" />
+    <Compile Include="StringBuilders\Functions\AppendLineIfExtensionUnitTests.cs" />
     <Compile Include="Strings\Converters\ToDateTimeExtensionUnitTest.cs" />
     <Compile Include="Strings\Converters\ToHashExtensionsUnitTest.cs" />
+    <Compile Include="Strings\Converters\ToDecimalExtensionsTests.cs" />
     <Compile Include="Strings\Converters\ToIntegerExtensionsTests.cs" />
-    <Compile Include="Strings\Converters\ToTextStylesUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToTextStylesExtensionsUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToEnumExtensionsUnitTest.cs" />
     <Compile Include="Strings\Functions\EncryptDecryptExtensionsTests.cs" />
+    <Compile Include="Strings\Functions\SaveToFileExtensionUnitTests.cs" />
     <Compile Include="Strings\Validations\HasValueExtensionUnitTest.cs" />
     <Compile Include="Strings\Validations\IsGuidExtensionUnitTest.cs" />
     <Compile Include="Strings\Validations\IsNumericExtensionsTests.cs" />
@@ -92,6 +100,12 @@
     <Folder Include="Numbers\Attributes\" />
     <Folder Include="Numbers\Converters\" />
     <Folder Include="Numbers\Functions\" />
+    <Folder Include="Objects\Attributes\" />
+    <Folder Include="Objects\Converters\" />
+    <Folder Include="Objects\Functions\" />
+    <Folder Include="StringBuilders\Attributes\" />
+    <Folder Include="StringBuilders\Converters\" />
+    <Folder Include="StringBuilders\Validations\" />
     <Folder Include="Strings\Attributes\" />
   </ItemGroup>
   <ItemGroup>

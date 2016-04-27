@@ -63,8 +63,18 @@
   <ItemGroup>
     <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
     <Compile Include="Attributes\EnumGuidAttribute.cs" />
+    <Compile Include="Collections\Functions\CompareExtension.cs" />
+    <Compile Include="Collections\Functions\FilterExactExtension.cs" />
+    <Compile Include="Collections\Functions\FilterExtensions.cs" />
+    <Compile Include="Collections\Functions\OrderByDescendingExtension.cs" />
+    <Compile Include="Collections\Functions\OrderByExtension.cs" />
+    <Compile Include="Collections\Functions\PageExtension.cs" />
+    <Compile Include="Collections\Functions\RangeExtension.cs" />
+    <Compile Include="Collections\Functions\SearchExtension.cs" />
     <Compile Include="Collections\Functions\ShuffleEnumerableExtensions.cs" />
     <Compile Include="Collections\Functions\WhereIfEnumerableExtensions.cs" />
+    <Compile Include="Configuration\ErrorMessages.cs" />
+    <Compile Include="Configuration\RegExpressions.cs" />
     <Compile Include="Datetimes\Functions\AgeExtension.cs" />
     <Compile Include="Datetimes\Functions\StartOfWeekExtensions.cs" />
     <Compile Include="Datetimes\Validations\IsWeekendExtension.cs" />
@@ -72,19 +82,36 @@
     <Compile Include="Enums\Functions\EnumDescriptionExtension.cs" />
     <Compile Include="Enums\Functions\EnumGuidExtensions.cs" />
     <Compile Include="Enumerations\HashType.cs" />
+    <Compile Include="Exceptions\EnumNotFoundFromGuidException.cs" />
     <Compile Include="Exceptions\ConversionFailureException.cs" />
+    <Compile Include="Exceptions\UnknownOrUnsupportedOptionException.cs" />
+    <Compile Include="Models\EnumerableCompareResults.cs" />
     <Compile Include="Numbers\Validations\IsEvenExtension.cs" />
     <Compile Include="Numbers\Validations\IsGreaterThanExtensions.cs" />
     <Compile Include="Numbers\Validations\IsGreaterThanOrEqualExtensions.cs" />
     <Compile Include="Numbers\Validations\IsLessThanExtensions.cs" />
     <Compile Include="Numbers\Validations\IsLessThanOrEqualExtensions.cs" />
     <Compile Include="Numbers\Validations\IsOddExtension.cs" />
+    <Compile Include="Objects\Validations\IsNullExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringBuilders\Functions\AppendIfExtension.cs" />
+    <Compile Include="StringBuilders\Functions\AppendLineIfExtension.cs" />
+    <Compile Include="Strings\Converters\FromBase64Extension.cs" />
+    <Compile Include="Strings\Converters\ToBase64Extension.cs" />
+    <Compile Include="Strings\Converters\ToBytesExtension.cs" />
     <Compile Include="Strings\Converters\ToDateTimeExtension.cs" />
+    <Compile Include="Strings\Converters\ToDecimalExtension.cs" />
+    <Compile Include="Strings\Converters\ToEnumExtension.cs" />
     <Compile Include="Strings\Converters\ToHashExtension.cs" />
     <Compile Include="Strings\Converters\ToIntegerExtensions.cs" />
     <Compile Include="Strings\Converters\ToTextStylesExtensions.cs" />
+    <Compile Include="Strings\Functions\ContainsCultureInvariantExtension.cs" />
     <Compile Include="Strings\Functions\EncryptDecryptExtensions.cs" />
+    <Compile Include="Strings\Functions\EqualsCultureInveriantExtension.cs" />
+    <Compile Include="Strings\Functions\GetWordCountExtension.cs" />
+    <Compile Include="Strings\Functions\ReadFromFileExtension.cs" />
+    <Compile Include="Strings\Functions\RepeatExtension.cs" />
+    <Compile Include="Strings\Functions\SaveToFileExtension.cs" />
     <Compile Include="Strings\Validations\HasValueExtension.cs" />
     <Compile Include="Strings\Validations\IsGuidExtension.cs" />
     <Compile Include="Strings\Validations\IsNumericExtension.cs" />
@@ -100,6 +127,11 @@
     <Folder Include="Enums\Validations\" />
     <Folder Include="Numbers\Converters\" />
     <Folder Include="Numbers\Functions\" />
+    <Folder Include="Objects\Attributes\" />
+    <Folder Include="Objects\Converters\" />
+    <Folder Include="Objects\Functions\" />
+    <Folder Include="StringBuilders\Converters\" />
+    <Folder Include="StringBuilders\Validations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,18 +5,18 @@ namespace MasterExtensionKit.Core.Datetimes.Functions
 	public static class AgeExtension
 	{
 		/// <summary>
-		///     Get an age from a date
+		///     Get an age from a source
 		/// </summary>
-		/// <param name="date"></param>
+		/// <param name="source"></param>
 		/// <returns>Years</returns>
-		public static int Age(this DateTime date)
+		public static int Age(this DateTime source)
 		{
 			var today = DateTime.Today;
-			if (today.Month < date.Month || today.Month == date.Month && today.Day < date.Day)
+			if (today.Month < source.Month || today.Month == source.Month && today.Day < source.Day)
 			{
-				return today.Year - date.Year - 1;
+				return today.Year - source.Year - 1;
 			}
-			return today.Year - date.Year;
+			return today.Year - source.Year;
 		}
 	}
 }

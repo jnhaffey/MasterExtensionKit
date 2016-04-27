@@ -5,35 +5,35 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <summary>
 		///     Checks if given number is greater than or equal to provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="minimumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsGreaterThanOrEqual(this int value, int minimumValue)
+		public static bool IsGreaterThanOrEqual(this int source, int minimumValue)
 		{
-			return value >= minimumValue;
+			return source >= minimumValue;
 		}
 
 		/// <summary>
 		///     Checks if given number is greater than or equal to provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="minimumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsGreaterThanOrEqual(this decimal value, decimal minimumValue)
+		public static bool IsGreaterThanOrEqual(this decimal source, decimal minimumValue)
 		{
-			return value >= minimumValue;
+			return source >= minimumValue;
 		}
 
 		/// ///
 		/// <summary>
 		///     Checks if given number is greater than or equal to provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="minimumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsGreaterThanOrEqual(this float value, float minimumValue)
+		public static bool IsGreaterThanOrEqual(this float source, float minimumValue)
 		{
-			return value >= minimumValue;
+			return source >= minimumValue;
 		}
 	}
 }

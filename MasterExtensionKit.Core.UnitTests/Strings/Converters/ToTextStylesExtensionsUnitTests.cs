@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 {
 	[TestClass]
-	public class ToTextStylesUnitTests
+	public class ToTextStylesExtensionsUnitTests
 	{
 		private const string PROPER_TEXT = "I am a proper sentence. I am a proper sentence.";
 

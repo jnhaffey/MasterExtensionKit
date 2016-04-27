@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using MasterExtensionKit.Core.Configuration;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
 	public static class IsGuidExtension
 	{
-		private const string GUID_REG_EXPRESSION = @"^[{(]?[0-9A-Fa-f]{8}[-]?([0-9A-Fa-f]{4}[-]?){3}[0-9A-Fa-f]{12}[)}]?$";
-
 		/// <summary>
 		///     Checks if the given string is a valid Guid
 		/// </summary>
@@ -17,10 +16,17 @@ namespace MasterExtensionKit.Core.Strings.Validations
 			if (!source.HasValue())
 				throw new ArgumentNullException(source);
 
-			var format = new Regex(GUID_REG_EXPRESSION);
+			var format = new Regex(RegExpressions.GUID_REG_EXPRESSION);
 			var match = format.Match(source);
 
 			return match.Success;
 		}
+
+		//TODO:BETTER METHOD
+		//public static bool IsValidGUid(this string source)
+		//{
+		//	Guid value;
+		//	return Guid.TryParse(source, out value);
+		//}
 	}
 }

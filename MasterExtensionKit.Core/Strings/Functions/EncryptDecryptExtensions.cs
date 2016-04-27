@@ -10,12 +10,12 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		/// <summary>
 		///     Encrypts the given string using the provided key
 		/// </summary>
-		/// <param name="stringToEncrypt"></param>
+		/// <param name="source"></param>
 		/// <param name="key"></param>
 		/// <returns></returns>
-		public static string Encrypt(this string stringToEncrypt, string key)
+		public static string Encrypt(this string source, string key)
 		{
-			if (string.IsNullOrWhiteSpace(stringToEncrypt))
+			if (string.IsNullOrWhiteSpace(source))
 			{
 				throw new ArgumentException("An empty string value cannot be encrypted.");
 			}
@@ -29,7 +29,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 
 			var rsa = new RSACryptoServiceProvider(cspp) {PersistKeyInCsp = true};
 
-			var bytes = rsa.Encrypt(Encoding.UTF8.GetBytes(stringToEncrypt), true);
+			var bytes = rsa.Encrypt(Encoding.UTF8.GetBytes(source), true);
 
 			return BitConverter.ToString(bytes);
 		}
@@ -37,14 +37,14 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		/// <summary>
 		///     Decrypts the given string using the provided key
 		/// </summary>
-		/// <param name="stringToDecrypt"></param>
+		/// <param name="source"></param>
 		/// <param name="key"></param>
 		/// <returns></returns>
-		public static string Decrypt(this string stringToDecrypt, string key)
+		public static string Decrypt(this string source, string key)
 		{
 			string result = null;
 
-			if (string.IsNullOrEmpty(stringToDecrypt))
+			if (string.IsNullOrEmpty(source))
 			{
 				throw new ArgumentException("An empty string value cannot be decrypted.");
 			}
@@ -60,7 +60,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 
 				var rsa = new RSACryptoServiceProvider(cspp) {PersistKeyInCsp = true};
 
-				var decryptArray = stringToDecrypt.Split(new[] {"-"}, StringSplitOptions.None);
+				var decryptArray = source.Split(new[] {"-"}, StringSplitOptions.None);
 				var decryptByteArray = Array.ConvertAll(decryptArray, s => Convert.ToByte(byte.Parse(s, NumberStyles.HexNumber)));
 
 				var bytes = rsa.Decrypt(decryptByteArray, true);

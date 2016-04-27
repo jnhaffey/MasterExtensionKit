@@ -1,5 +1,6 @@
 ﻿using System;
 using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Configuration;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
@@ -8,15 +9,15 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		/// <summary>
 		///     Convert a string to an integer
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="ignoreError">Will ignore exceptions - Default: true</param>
 		/// <returns></returns>
-		public static int? ToInteger(this string value, bool ignoreError = true)
+		public static int? ToInteger(this string source, bool ignoreError = true)
 		{
 			int? valueToReturn = null;
 			try
 			{
-				valueToReturn = int.Parse(value);
+				valueToReturn = int.Parse(source);
 			}
 			catch (Exception ex)
 			{
@@ -24,7 +25,7 @@ namespace MasterExtensionKit.Core.Strings.Converters
 				{
 					return null;
 				}
-				throw new ConversionFailureException("Failed to convert string to interger.", ex);
+				throw new ConversionFailureException(ErrorMessages.GenerateConversionError("string","integer"), ex);
 			}
 			return valueToReturn;
 		}

@@ -5,34 +5,34 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <summary>
 		///     Checks if given number is less than provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="maximumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsLessThan(this int value, int maximumValue)
+		public static bool IsLessThan(this int source, int maximumValue)
 		{
-			return value < maximumValue;
+			return source < maximumValue;
 		}
 
 		/// <summary>
 		///     Checks if given number is less than provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="maximumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsLessThan(this decimal value, decimal maximumValue)
+		public static bool IsLessThan(this decimal source, decimal maximumValue)
 		{
-			return value < maximumValue;
+			return source < maximumValue;
 		}
 
 		/// <summary>
 		///     Checks if given number is less than provided number
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="source"></param>
 		/// <param name="maximumValue"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsLessThan(this float value, float maximumValue)
+		public static bool IsLessThan(this float source, float maximumValue)
 		{
-			return value < maximumValue;
+			return source < maximumValue;
 		}
 	}
 }
