@@ -1,5 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
@@ -10,8 +13,13 @@ namespace MasterExtensionKit.Core.Strings.Validations
 		/// </summary>
 		/// <param name="source"></param>
 		/// <returns>Boolean</returns>
-		public static bool IsValidIPAddress(this string source)
+		public static bool IsValidIpAddress(this string source)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return Regex.IsMatch(source, RegExpressions.IP_ADDRESS_REG_EXPRESSION);
 		}
 	}

@@ -7,69 +7,69 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 	public class IsGreaterThanOrEqualExtensionTests
 	{
 		[TestMethod]
-		public void Integer_NegativeTwo_IsGreaterThanOrEqual_NegativeTwo_True()
+		public void Number_Validation_Number_Validation_Integer_NegativeTwo_IsGreaterThanOrEqual_NegativeTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsGreaterThanOrEqual_NegativeOne_False()
+		public void Number_Validation_Number_Validation_Integer_NegativeTwo_IsGreaterThanOrEqual_NegativeOne_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_NEGATIVE_ONE));
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_NEGATIVE_ONE));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsGreaterThanOrEqual_Zero_False()
+		public void Number_Validation_Integer_NegativeTwo_IsGreaterThanOrEqual_Zero_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_ZERO));
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsGreaterThanOrEqual_PositiveTwo_False()
+		public void Number_Validation_Integer_NegativeTwo_IsGreaterThanOrEqual_PositiveTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsGreaterThanOrEqual_NegativeTwo_True()
+		public void Number_Validation_Integer_Zero_IsGreaterThanOrEqual_NegativeTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_ZERO.IsGreaterThanOrEqual(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_ZERO.IsGreaterThanOrEqual(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsGreaterThanOrEqual_Zero_True()
+		public void Number_Validation_Integer_Zero_IsGreaterThanOrEqual_Zero_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_ZERO.IsGreaterThanOrEqual(TestNumberData.INT_ZERO));
+			Assert.IsTrue(TestNumberData.INTEGER_ZERO.IsGreaterThanOrEqual(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsGreaterThanOrEqual_PositiveTwo_False()
+		public void Number_Validation_Integer_Zero_IsGreaterThanOrEqual_PositiveTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_ZERO.IsGreaterThanOrEqual(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_ZERO.IsGreaterThanOrEqual(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsGreaterThanOrEqual_NegativeTwo_True()
+		public void Number_Validation_Integer_PositiveTwo_IsGreaterThanOrEqual_NegativeTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsGreaterThanOrEqual_Zero_True()
+		public void Number_Validation_Integer_PositiveTwo_IsGreaterThanOrEqual_Zero_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_ZERO));
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsGreaterThanOrEqual_PositiveOne_True()
+		public void Number_Validation_Integer_PositiveTwo_IsGreaterThanOrEqual_PositiveOne_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_POSITIVE_ONE));
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_POSITIVE_ONE));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsGreaterThanOrEqual_PositiveTwo_True()
+		public void Number_Validation_Integer_PositiveTwo_IsGreaterThanOrEqual_PositiveTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsGreaterThanOrEqual(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
 		[TestMethod]

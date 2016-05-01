@@ -1,7 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using MasterExtensionKit.Core.Configuration;
 using MasterExtensionKit.Core.Enumerations;
 using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
@@ -15,11 +17,21 @@ namespace MasterExtensionKit.Core.Strings.Validations
 		/// <returns>Boolean</returns>
 		public static bool IsValidPostalCode(this string source, Country countryToValidate)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
+			if (countryToValidate.IsNull())
+			{
+				throw new ArgumentNullException(nameof(countryToValidate));
+			}
+
 			switch (countryToValidate)
 			{
-				case Country.UnitedStates:
+				case Country.UNITED_STATES:
 					return ValidateCode(source, RegExpressions.UNITED_STATES);
-				case Country.UnitedKingdom:
+				case Country.UNITED_KINGDOM:
 					return ValidateCode(source, RegExpressions.UNITED_KINGDOM);
 				default:
 					throw new UnknownOrUnsupportedOptionException(ErrorMessages.UnknownUnsupportedCountryError());

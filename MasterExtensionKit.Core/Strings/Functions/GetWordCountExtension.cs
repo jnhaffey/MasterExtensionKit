@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
 	public static class GetWordCountExtension
 	{
-		public static int GetWorldCount(this string source)
+		public static int GetWordCount(this string source)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var count = 0;
 			try
 			{
@@ -15,7 +22,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 				var matches = regex.Matches(source);
 				count = matches.Count;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				//TODO: Check what Exceptions can be thrown?
 				throw;

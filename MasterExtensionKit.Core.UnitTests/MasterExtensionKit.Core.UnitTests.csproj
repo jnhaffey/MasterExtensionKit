@@ -17,7 +17,7 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net40|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,13 +26,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net40|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Net45|AnyCPU'">
+    <OutputPath>bin\Debug-Net45\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Net45|AnyCPU'">
+    <OutputPath>bin\Release-Net45\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net46|AnyCPU' ">
+    <OutputPath>bin\Debug-Net4.6\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Net46|AnyCPU'">
+    <OutputPath>bin\Release-Net46\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-NuGet|AnyCPU'">
+    <OutputPath>bin\Debug-NuGet\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-NuGet|AnyCPU'">
+    <OutputPath>bin\Release-NuGet\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,6 +71,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Collections\Functions\ShuffleEnumerableExtensionsTests.cs" />
+    <Compile Include="Collections\Functions\CompareExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\FilterExactExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\FilterExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\OrderByDescendingExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\OrderByExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\PageExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\RangeExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\SearchExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\WhereIfEnumerableExtensionsTests.cs" />
     <Compile Include="Datetimes\Functions\AgeExtensionsUnitTests.cs" />
     <Compile Include="Datetimes\Functions\AgeExtensionUnitTests.cs" />
@@ -69,23 +95,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringBuilders\Functions\AppendIfExtensionUnitTests.cs" />
     <Compile Include="StringBuilders\Functions\AppendLineIfExtensionUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToCamelCaseExtensionUnitTests.cs" />
     <Compile Include="Strings\Converters\ToDateTimeExtensionUnitTest.cs" />
     <Compile Include="Strings\Converters\ToHashExtensionsUnitTest.cs" />
     <Compile Include="Strings\Converters\ToDecimalExtensionsTests.cs" />
     <Compile Include="Strings\Converters\ToIntegerExtensionsTests.cs" />
-    <Compile Include="Strings\Converters\ToTextStylesExtensionsUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToPascalCaseExtensionUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToProperCaseExtensionsUnitTests.cs" />
     <Compile Include="Strings\Converters\ToEnumExtensionsUnitTest.cs" />
+    <Compile Include="Strings\Converters\ToBase64ExtensionUnitTests.cs" />
+    <Compile Include="Strings\Converters\FromBase64ExtensionUnitTests.cs" />
+    <Compile Include="Strings\Converters\ToBytesExtensionUnitTests.cs" />
     <Compile Include="Strings\Functions\EncryptDecryptExtensionsTests.cs" />
     <Compile Include="Strings\Functions\SaveToFileExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\ContainsCultureInvariantExtesionUnitTests.cs" />
+    <Compile Include="Strings\Functions\EqualsCultureInveriantExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\GetWordCountExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\RemoveAlphaExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\RemoveNonAlphaNumericExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\RemoveNumericExtensionUnitTests.cs" />
+    <Compile Include="Strings\Helpers\ReadFromFileExtensionUnitTests.cs" />
+    <Compile Include="Strings\Functions\RepeatExtensionUnitTests.cs" />
     <Compile Include="Strings\Validations\HasValueExtensionUnitTest.cs" />
     <Compile Include="Strings\Validations\IsGuidExtensionUnitTest.cs" />
     <Compile Include="Strings\Validations\IsNumericExtensionsTests.cs" />
     <Compile Include="Strings\Validations\IsValidEmailExtensionTests.cs" />
     <Compile Include="Strings\Validations\IsValidIpAddressExtensionUnitTest.cs" />
     <Compile Include="Strings\Validations\IsValidPostalZipCodeExtensionUnitTest.cs" />
+    <Compile Include="_Shared\TestByteData.cs" />
     <Compile Include="_Shared\TestCollectionData.cs" />
     <Compile Include="_Shared\TestEnumData.cs" />
     <Compile Include="_Shared\TestNumberData.cs" />
+    <Compile Include="_Shared\TestSharedData.cs" />
     <Compile Include="_Shared\TestStringData.cs" />
   </ItemGroup>
   <ItemGroup>

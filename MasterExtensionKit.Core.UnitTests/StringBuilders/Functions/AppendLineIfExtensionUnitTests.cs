@@ -7,7 +7,7 @@ namespace MasterExtensionKit.Core.UnitTests.StringBuilders.Functions
 	public class AppendLineIfExtensionUnitTests
 	{
 		[TestMethod]
-		public void TestMethod1()
+		public void StringBuilder_AppendLineIf_Test()
 		{
 			Assert.Fail("NOT IMPLEMENTED");
 		}

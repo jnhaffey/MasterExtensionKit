@@ -1,4 +1,7 @@
-﻿namespace MasterExtensionKit.Core.Numbers.Validations
+﻿using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
+
+namespace MasterExtensionKit.Core.Numbers.Validations
 {
 	public static class IsLessThanOrEqualExtensions
 	{
@@ -10,6 +13,11 @@
 		/// <returns>Boolean</returns>
 		public static bool IsLessThanOrEqual(this int source, int maximumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source <= maximumValue;
 		}
 
@@ -21,6 +29,11 @@
 		/// <returns>Boolean</returns>
 		public static bool IsLessThanOrEqual(this decimal source, decimal maximumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source <= maximumValue;
 		}
 
@@ -32,6 +45,11 @@
 		/// <returns>Boolean</returns>
 		public static bool IsLessThanOrEqual(this float source, float maximumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source <= maximumValue;
 		}
 	}

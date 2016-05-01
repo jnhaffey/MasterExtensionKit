@@ -1,5 +1,6 @@
-﻿using System;
+﻿using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Validations;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
@@ -7,18 +8,58 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	[TestClass]
 	public class IsGuidExtensionUnitTest
 	{
+		#region General String Tests
+
 		[TestMethod]
-		public void IsGuid_True()
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Validation_IsGuid_Null_Exception()
 		{
-			var guidString = Guid.NewGuid().ToString();
-			Assert.IsTrue(guidString.IsGuid());
+			TestStringData.NULL_STRING.IsGuid();
 		}
 
 		[TestMethod]
-		public void IsGuid_False()
+		public void String_Validation_IsGuid_Empty_Invalid()
 		{
-			var notAGuid = Guid.NewGuid().ToString().Replace("-", "$").Substring(0, 5);
-			Assert.IsFalse(notAGuid.IsGuid());
+			Assert.IsFalse(TestStringData.EMPTY_STRING.IsGuid());
+		}
+
+		#endregion
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_B_Valid()
+		{
+			Assert.IsTrue(TestStringData.GUID_B_FORMAT.IsGuid());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_D_Valid()
+		{
+			Assert.IsTrue(TestStringData.GUID_D_FORMAT.IsGuid());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_N_Valid()
+		{
+			Assert.IsTrue(TestStringData.GUID_N_FORMAT.IsGuid());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_P_Valid()
+		{
+			Assert.IsTrue(TestStringData.GUID_P_FORMAT.IsGuid());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_X_Valid()
+		{
+			Assert.IsTrue(TestStringData.GUID_X_FORMAT.IsGuid());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_Unknown_Invalid()
+		{
+			var unknownGuidFormat = $"{TestStringData.GUID_B_FORMAT}{TestStringData.GUID_D_FORMAT}";
+			Assert.IsFalse(unknownGuidFormat.IsGuid());
 		}
 	}
 }

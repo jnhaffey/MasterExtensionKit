@@ -1,3 +1,6 @@
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
+
 namespace MasterExtensionKit.Core.Numbers.Validations
 {
 	public static class IsGreaterThanOrEqualExtensions
@@ -10,6 +13,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <returns>Boolean</returns>
 		public static bool IsGreaterThanOrEqual(this int source, int minimumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source >= minimumValue;
 		}
 
@@ -21,6 +29,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <returns>Boolean</returns>
 		public static bool IsGreaterThanOrEqual(this decimal source, decimal minimumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source >= minimumValue;
 		}
 
@@ -33,6 +46,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		/// <returns>Boolean</returns>
 		public static bool IsGreaterThanOrEqual(this float source, float minimumValue)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source >= minimumValue;
 		}
 	}

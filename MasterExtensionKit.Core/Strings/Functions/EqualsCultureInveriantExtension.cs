@@ -1,4 +1,5 @@
 ﻿using System;
+using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
@@ -6,11 +7,11 @@ namespace MasterExtensionKit.Core.Strings.Functions
 	{
 		public static bool EqualsCultureInveriant(this string source, string equals)
 		{
-			if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(equals))
+			if (source.HasValue() && equals.HasValue())
 			{
-				return false;
+				return source.Equals(equals, StringComparison.InvariantCultureIgnoreCase);
 			}
-			return source.Equals(equals, StringComparison.InvariantCultureIgnoreCase);
+			return false;
 		}
 	}
 }

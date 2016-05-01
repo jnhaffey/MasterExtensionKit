@@ -1,5 +1,6 @@
 ﻿using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Converters;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
@@ -8,105 +9,60 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 	public class ToIntegerExtensionsTests
 	{
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_Zero_Successful()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_Zero_Valid()
 		{
-			var valueToTest = "0";
-			var valueExpected = 0;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_ZERO, TestStringData.INTEGER_ZERO_VALUE.ToInteger());
 		}
 
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_MaxInteger_Successful()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_MaxInteger_Valid()
 		{
-			var valueToTest = int.MaxValue.ToString();
-			var valueExpected = int.MaxValue;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_MAX_VALUE, TestStringData.INTEGER_MAX_VALUE.ToInteger());
 		}
 
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_MinimumInteger_Successful()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_MinimumInteger_Valid()
 		{
-			var valueToTest = int.MinValue.ToString();
-			var valueExpected = int.MinValue;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_MIN_VALUE, TestStringData.INTEGER_MIN_VALUE.ToInteger());
 		}
 
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_AlphaOnly_Null()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_AlphaOnly_Null()
 		{
-			var valueToTest = "ABC";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.ALPHA_ONLY_STRING.ToInteger());
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
-		public void ToInteger_IgnoreErrorFalse_AlphaOnly_Null()
+		public void String_Converter_ToInteger_IgnoreErrorFalse_AlphaOnly_Exception()
 		{
-			var valueToTest = "ABC";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(false);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.ALPHA_ONLY_STRING.ToInteger(false));
 		}
 
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_AlphaNumeric_Null()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_AlphaNumeric_Null()
 		{
-			var valueToTest = "123ABC";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToInteger());
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
-		public void ToInteger_IgnoreErrorFalse_AlphaNumeric_Null()
+		public void String_Converter_ToInteger_IgnoreErrorFalse_AlphaNumeric_Null()
 		{
-			var valueToTest = "123ABC";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(false);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToInteger(false));
 		}
 
 		[TestMethod]
-		public void ToInteger_IgnoreErrorTrue_Decimal_Null()
+		public void String_Converter_ToInteger_IgnoreErrorTrue_Decimal_Null()
 		{
-			var valueToTest = "12.34";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(true);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.DECIMAL_MIN_VALUE.ToInteger());
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
-		public void ToInteger_IgnoreErrorFalse_Decimal_Null()
+		public void String_Converter_ToInteger_IgnoreErrorFalse_Decimal_Null()
 		{
-			var valueToTest = "12.34";
-			string valueExpected = null;
-
-			var actualValue = valueToTest.ToInteger(false);
-
-			Assert.AreEqual(valueExpected, actualValue);
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.DECIMAL_MIN_VALUE.ToInteger(false));
 		}
 	}
 }

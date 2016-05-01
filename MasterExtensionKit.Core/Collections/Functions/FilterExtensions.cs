@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 using MasterExtensionKit.Core.Strings.Functions;
 
 namespace MasterExtensionKit.Core.Collections.Functions
@@ -9,6 +11,11 @@ namespace MasterExtensionKit.Core.Collections.Functions
 	{
 		public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, string propertyName, string value)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var entities = source.ToList();
 			if (!entities.Any() || string.IsNullOrEmpty(propertyName) || string.IsNullOrWhiteSpace(value))
 			{
@@ -28,6 +35,11 @@ namespace MasterExtensionKit.Core.Collections.Functions
 
 		public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, PropertyInfo propInfo, string value)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var entities = source.ToList();
 			if (!entities.Any() || propInfo == null || string.IsNullOrWhiteSpace(value))
 			{

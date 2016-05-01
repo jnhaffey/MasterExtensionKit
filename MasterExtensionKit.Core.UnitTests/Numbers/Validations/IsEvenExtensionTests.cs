@@ -7,33 +7,33 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 	public class IsEvenExtensionTests
 	{
 		[TestMethod]
-		public void IsEven_Integer_NegativeTwo_True()
+		public void Number_Validation_IsEven_Integer_NegativeTwo_Valid()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_TWO.IsEven());
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_TWO.IsEven());
 		}
 
 		[TestMethod]
-		public void IsEven_Integer_NegativeOne_False()
+		public void Number_Validation_IsEven_Integer_NegativeOne_Invalid()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_ONE.IsEven());
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_ONE.IsEven());
 		}
 
 		[TestMethod]
-		public void IsEven_Integer_Zero_True()
+		public void Number_Validation_IsEven_Integer_Zero_Valid()
 		{
-			Assert.IsTrue(TestNumberData.INT_ZERO.IsEven());
+			Assert.IsTrue(TestNumberData.INTEGER_ZERO.IsEven());
 		}
 
 		[TestMethod]
-		public void IsEven_Integer_PositiveOne_False()
+		public void Number_Validation_IsEven_Integer_PositiveOne_Invalid()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_ONE.IsEven());
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_ONE.IsEven());
 		}
 
 		[TestMethod]
-		public void IsEven_Integer_PositiveTwo_True()
+		public void Number_Validation_IsEven_Integer_PositiveTwo_Valid()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_TWO.IsEven());
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsEven());
 		}
 	}
 }

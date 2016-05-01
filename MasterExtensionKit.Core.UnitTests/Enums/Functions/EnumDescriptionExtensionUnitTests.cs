@@ -10,19 +10,19 @@ namespace MasterExtensionKit.Core.UnitTests.Enums.Functions
 		[TestMethod]
 		public void NoEnumDescription_True()
 		{
-			Assert.AreEqual(null, TestEnumData.DescriptiveEnum.NoDescription.GetDescription());
+			Assert.AreEqual(null, TestEnumData.DescriptiveEnum.NO_DESCRIPTION.GetDescription());
 		}
 
 		[TestMethod]
 		public void EmptyEnumDescription_True()
 		{
-			Assert.AreEqual(string.Empty, TestEnumData.DescriptiveEnum.EmptyDescription.GetDescription());
+			Assert.AreEqual(string.Empty, TestEnumData.DescriptiveEnum.EMPTY_DESCRIPTION.GetDescription());
 		}
 
 		[TestMethod]
 		public void HasEnumDescription_True()
 		{
-			Assert.AreEqual("This is a description", TestEnumData.DescriptiveEnum.HasDescription.GetDescription());
+			Assert.AreEqual("This is a description", TestEnumData.DescriptiveEnum.HAS_DESCRIPTION.GetDescription());
 		}
 	}
 }

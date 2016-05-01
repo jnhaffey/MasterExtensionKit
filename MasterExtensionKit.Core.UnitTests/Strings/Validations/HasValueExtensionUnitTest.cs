@@ -1,4 +1,5 @@
 ﻿using MasterExtensionKit.Core.Strings.Validations;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
@@ -7,31 +8,27 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	public class HasValueExtensionUnitTest
 	{
 		[TestMethod]
-		public void HasValue_True()
+		public void String_Validation_HasValue_Null_Invalid()
 		{
-			var stringToTest = "I have Value";
-			Assert.IsTrue(stringToTest.HasValue());
+			Assert.IsFalse(TestStringData.NULL_STRING.HasValue());
 		}
 
 		[TestMethod]
-		public void HasValue_Empty_False()
+		public void String_Validation_HasValue_Empty_Invalid()
 		{
-			var stringToTest = string.Empty;
-			Assert.IsFalse(stringToTest.HasValue());
+			Assert.IsFalse(TestStringData.EMPTY_STRING.HasValue());
 		}
 
 		[TestMethod]
-		public void HasValue_Null_False()
+		public void String_Validation_HasValue_Valid()
 		{
-			string stringToTest = null;
-			Assert.IsFalse(stringToTest.HasValue());
+			Assert.IsTrue(TestStringData.RANDOM_ALPHANUMERIC_STIRNG.HasValue());
 		}
 
 		[TestMethod]
-		public void HasValue_WhiteSpace_False()
+		public void String_Validation_HasValue_WhiteSpace_Invalid()
 		{
-			var stringToTest = " ";
-			Assert.IsFalse(stringToTest.HasValue());
+			Assert.IsFalse(TestStringData.WHITESPACE_STRING.HasValue());
 		}
 	}
 }

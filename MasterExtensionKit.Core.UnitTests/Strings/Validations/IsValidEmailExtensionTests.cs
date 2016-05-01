@@ -1,4 +1,6 @@
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Validations;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
@@ -6,36 +8,53 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	[TestClass]
 	public class IsValidEmailExtensionTests
 	{
-		//TESTING DEFAULT FORMAT
+		#region Default Format
+
 		[TestMethod]
-		public void IsValidEmail_Basic_True()
+		public void String_Validation_IsValidEmail_Basic_Valid()
 		{
-			var emailToTest = "johndoe@example.com";
-			Assert.IsTrue(emailToTest.IsValidEmail());
+			Assert.IsTrue(TestStringData.EMAIL_ADDRESS_STANDARD_VALID.IsValidEmail());
 		}
 
 		[TestMethod]
-		public void IsValidEmail_Basic_False()
+		public void String_Validation_IsValidEmail_Basic_Invalid()
 		{
-			var emailToTest = "john*doe@example.com";
-			Assert.IsFalse(emailToTest.IsValidEmail());
+			Assert.IsFalse(TestStringData.EMAIL_ADDRESS_INVALID.IsValidEmail());
 		}
 
-		//TESTING ONE CUSTOM FORMAT
+		#endregion
+
+		#region Custom Format
+
 		[TestMethod]
-		public void IsValidEmail_CustomFormater_True()
+		public void String_Validation_IsValidEmail_CustomFormater_Valid()
 		{
-			var customFormat = @"^[\w-\._]+@([\w-]+\.)+[\w-]{2,4}$";
-			var emailToTest = "john_doe@example.com";
-			Assert.IsTrue(emailToTest.IsValidEmail(customFormat));
+			Assert.IsTrue(TestStringData.EMAIL_ADDRESS_CUSTOM_VALID.IsValidEmail(TestStringData.EMAIL_CUSTOM_FORMATTER));
 		}
 
 		[TestMethod]
-		public void IsValidEmail_CustomFormater_False()
+		public void String_Validation_IsValidEmail_CustomFormater_Invalid()
 		{
-			var customFormat = @"^[\w-\._]+@([\w-]+\.)+[\w-]{2,4}$";
-			var emailToTest = "john*doe@example.com";
-			Assert.IsFalse(emailToTest.IsValidEmail(customFormat));
+			Assert.IsFalse(TestStringData.EMAIL_ADDRESS_INVALID.IsValidEmail(TestStringData.EMAIL_CUSTOM_FORMATTER));
 		}
+
+		#endregion
+
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void String_Validation_IsValidEmail_Null_Exception()
+		{
+			TestStringData.NULL_STRING.IsValidEmail();
+		}
+
+		[TestMethod]
+		public void String_Validation_IsValidEmail_Empty_Invalid()
+		{
+			Assert.IsFalse(TestStringData.EMPTY_STRING.IsValidEmail());
+		}
+
+		#endregion
 	}
 }

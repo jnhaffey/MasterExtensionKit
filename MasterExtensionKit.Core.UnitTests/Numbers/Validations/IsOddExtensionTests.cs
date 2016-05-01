@@ -7,33 +7,33 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 	public class IsOddExtensionTests
 	{
 		[TestMethod]
-		public void IsOdd_Integer_NegativeTwo_False()
+		public void Number_Validation_IsOdd_Integer_NegativeTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_TWO.IsOdd());
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_TWO.IsOdd());
 		}
 
 		[TestMethod]
-		public void IsOdd_Integer_NegativeOne_True()
+		public void Number_Validation_IsOdd_Integer_NegativeOne_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_ONE.IsOdd());
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_ONE.IsOdd());
 		}
 
 		[TestMethod]
-		public void IsOdd_Integer_Zero_False()
+		public void Number_Validation_IsOdd_Integer_Zero_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_ZERO.IsOdd());
+			Assert.IsFalse(TestNumberData.INTEGER_ZERO.IsOdd());
 		}
 
 		[TestMethod]
-		public void IsOdd_Integer_PositiveOne_True()
+		public void Number_Validation_IsOdd_Integer_PositiveOne_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_POSITIVE_ONE.IsOdd());
+			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_ONE.IsOdd());
 		}
 
 		[TestMethod]
-		public void IsOdd_Integer_PositiveTwo_False()
+		public void Number_Validation_IsOdd_Integer_PositiveTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_TWO.IsOdd());
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsOdd());
 		}
 	}
 }

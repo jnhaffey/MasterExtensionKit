@@ -7,69 +7,69 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 	public class IsLessThanExtensionTests
 	{
 		[TestMethod]
-		public void Integer_NegativeTwo_IsLessThan_NegativeTwo_False()
+		public void Number_Validation_Integer_NegativeTwo_IsLessThan_NegativeTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_NEGATIVE_TWO.IsLessThan(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_NEGATIVE_TWO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsLessThan_NegativeOne_True()
+		public void Number_Validation_Integer_NegativeTwo_IsLessThan_NegativeOne_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_TWO.IsLessThan(TestNumberData.INT_NEGATIVE_ONE));
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_TWO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_ONE));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsLessThan_Zero_True()
+		public void Number_Validation_Integer_NegativeTwo_IsLessThan_Zero_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_TWO.IsLessThan(TestNumberData.INT_ZERO));
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_TWO.IsLessThan(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_NegativeTwo_IsLessThan_PositiveTwo_True()
+		public void Number_Validation_Integer_NegativeTwo_IsLessThan_PositiveTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_NEGATIVE_TWO.IsLessThan(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_NEGATIVE_TWO.IsLessThan(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsLessThan_NegativeTwo_False()
+		public void Number_Validation_Integer_Zero_IsLessThan_NegativeTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_ZERO.IsLessThan(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_ZERO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsLessThan_Zero_False()
+		public void Number_Validation_Integer_Zero_IsLessThan_Zero_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_ZERO.IsLessThan(TestNumberData.INT_ZERO));
+			Assert.IsFalse(TestNumberData.INTEGER_ZERO.IsLessThan(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_Zero_IsLessThan_PositiveTwo_True()
+		public void Number_Validation_Integer_Zero_IsLessThan_PositiveTwo_True()
 		{
-			Assert.IsTrue(TestNumberData.INT_ZERO.IsLessThan(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsTrue(TestNumberData.INTEGER_ZERO.IsLessThan(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsLessThan_NegativeTwo_False()
+		public void Number_Validation_Integer_PositiveTwo_IsLessThan_NegativeTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_TWO.IsLessThan(TestNumberData.INT_NEGATIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsLessThan_Zero_False()
+		public void Number_Validation_Integer_PositiveTwo_IsLessThan_Zero_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_TWO.IsLessThan(TestNumberData.INT_ZERO));
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsLessThan(TestNumberData.INTEGER_ZERO));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsLessThan_PositiveOne_False()
+		public void Number_Validation_Integer_PositiveTwo_IsLessThan_PositiveOne_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_TWO.IsLessThan(TestNumberData.INT_NEGATIVE_ONE));
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_ONE));
 		}
 
 		[TestMethod]
-		public void Integer_PositiveTwo_IsLessThan_PositiveTwo_False()
+		public void Number_Validation_Integer_PositiveTwo_IsLessThan_PositiveTwo_False()
 		{
-			Assert.IsFalse(TestNumberData.INT_POSITIVE_TWO.IsLessThan(TestNumberData.INT_POSITIVE_TWO));
+			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsLessThan(TestNumberData.INTEGER_NEGATIVE_TWO));
 		}
 
 		[TestMethod]

@@ -5,7 +5,7 @@
 	/// </summary>
 	public enum Country
 	{
-		UnitedStates = 0,
-		UnitedKingdom = 1
+		UNITED_STATES = 0,
+		UNITED_KINGDOM = 1
 	}
 }

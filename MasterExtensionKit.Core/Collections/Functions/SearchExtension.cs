@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Collections.Functions
 {
@@ -8,6 +10,11 @@ namespace MasterExtensionKit.Core.Collections.Functions
 	{
 		public static IEnumerable<T> Search<T>(this IEnumerable<T> source, string searchTerm)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var entities = source.ToList();
 
 			// If there are no results, or the search term is blank/empty/null, exit.

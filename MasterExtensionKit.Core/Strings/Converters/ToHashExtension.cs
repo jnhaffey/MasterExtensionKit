@@ -1,6 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using MasterExtensionKit.Core.Enumerations;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
@@ -65,6 +67,11 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		/// <returns>The resulting hash or an empty string on error</returns>
 		public static string ComputeHash(this string source, HashType hashType = HashType.MD5)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			try
 			{
 				var hash = GetHash(source, hashType);

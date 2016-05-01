@@ -3,6 +3,7 @@ using System.Linq;
 using MasterExtensionKit.Core.Attributes;
 using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Enums.Functions
 {
@@ -15,6 +16,11 @@ namespace MasterExtensionKit.Core.Enums.Functions
 		/// <returns>Guid</returns>
 		public static Guid GetGuid(this Enum source)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var type = source.GetType();
 			var fieldInfo = type.GetField(source.ToString());
 			var attributes = fieldInfo.GetCustomAttributes(typeof (EnumGuidAttribute), false) as EnumGuidAttribute[];
@@ -31,6 +37,16 @@ namespace MasterExtensionKit.Core.Enums.Functions
 		/// <returns>Enum Value</returns>
 		public static T GetEnumValue<T>(this T source, Guid guid, bool ignoreError = true) where T : struct
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
+			if (guid.IsNull())
+			{
+				throw new ArgumentNullException(nameof(guid));
+			}
+
 			var type = typeof (T);
 			var fieldInfo = type.GetFields();
 			var fields = from field in fieldInfo

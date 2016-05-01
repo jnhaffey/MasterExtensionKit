@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
+using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
@@ -15,12 +16,12 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		/// <returns></returns>
 		public static string Encrypt(this string source, string key)
 		{
-			if (string.IsNullOrWhiteSpace(source))
+			if (!source.HasValue())
 			{
 				throw new ArgumentException("An empty string value cannot be encrypted.");
 			}
 
-			if (string.IsNullOrWhiteSpace(key))
+			if (!key.HasValue())
 			{
 				throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.");
 			}
@@ -44,12 +45,12 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		{
 			string result = null;
 
-			if (string.IsNullOrEmpty(source))
+			if (!source.HasValue())
 			{
 				throw new ArgumentException("An empty string value cannot be decrypted.");
 			}
 
-			if (string.IsNullOrEmpty(key))
+			if (!key.HasValue())
 			{
 				throw new ArgumentException("Cannot decrypt using an empty key. Please supply a decryption key.");
 			}
@@ -67,9 +68,10 @@ namespace MasterExtensionKit.Core.Strings.Functions
 
 				result = Encoding.UTF8.GetString(bytes);
 			}
-			finally
+			catch (Exception ex)
 			{
-				// no need for further processing
+				//HANDLED EXCEPTIONS BETTER
+				throw;
 			}
 
 			return result;

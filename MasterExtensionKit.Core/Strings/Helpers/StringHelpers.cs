@@ -2,13 +2,19 @@
 using System.IO;
 using System.Text;
 using MasterExtensionKit.Core.Objects.Validations;
+using MasterExtensionKit.Core.Strings.Validations;
 
-namespace MasterExtensionKit.Core.Strings.Functions
+namespace MasterExtensionKit.Core.Strings.Helpers
 {
-	public static class ReadFromFileExtension
+	public static class StringHelpers
 	{
-		public static void ReadFromFile(this string source, string fileName, Encoding encodingType = null)
+		public static void ReadFromFile(out string returnValue, string fileName, Encoding encodingType = null)
 		{
+			if (!fileName.HasValue())
+			{
+				throw new ArgumentNullException(nameof(fileName));
+			}
+
 			if (encodingType.IsNull())
 			{
 				encodingType = Encoding.Default;
@@ -17,7 +23,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 			{
 				using (var streamReader = new StreamReader(fileName, encodingType))
 				{
-					source = streamReader.ReadToEnd();
+					returnValue = streamReader.ReadToEnd();
 					streamReader.Close();
 				}
 			}

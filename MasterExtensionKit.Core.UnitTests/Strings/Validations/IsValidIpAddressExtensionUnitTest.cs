@@ -1,4 +1,6 @@
-﻿using MasterExtensionKit.Core.Strings.Validations;
+﻿using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Strings.Validations;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
@@ -7,31 +9,40 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	public class IsValidIpAddressExtensionUnitTest
 	{
 		[TestMethod]
-		public void IsValidIpAddress_1_1_1_1_True()
+		[ExpectedException(typeof(SourceNullException),"")]
+		public void String_Validation_IsValidIpAddress_Null_Exception()
 		{
-			var ipStringToTest = "1.1.1.1";
-			Assert.IsTrue(ipStringToTest.IsValidIPAddress());
+			TestStringData.NULL_STRING.IsValidIpAddress();
 		}
 
 		[TestMethod]
-		public void IsValidIpAddress_254_254_254_254_True()
+		public void String_Validation_IsValidIpAddress_Empty_Invalid()
 		{
-			var ipStringToTest = "254.254.254.254";
-			Assert.IsTrue(ipStringToTest.IsValidIPAddress());
+			Assert.IsFalse(TestStringData.EMPTY_STRING.IsValidIpAddress());
 		}
 
 		[TestMethod]
-		public void IsValidIpAddress_0_0_0_0_False()
+		public void String_Validation_IsValidIpAddress_1_1_1_1_Valid()
 		{
-			var ipStringToTest = "0.0.0.0";
-			Assert.IsTrue(ipStringToTest.IsValidIPAddress());
+			Assert.IsTrue(TestStringData.IP_ADDRESS_1_1_1_1.IsValidIpAddress());
 		}
 
 		[TestMethod]
-		public void IsValidIpAddress_255_255_255_255_False()
+		public void String_Validation_IsValidIpAddress_254_254_254_254_Valid()
 		{
-			var ipStringToTest = "255.255.255.255";
-			Assert.IsTrue(ipStringToTest.IsValidIPAddress());
+			Assert.IsTrue(TestStringData.IP_ADDRESS_254_254_254_254.IsValidIpAddress());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsValidIpAddress_0_0_0_0_Invalid()
+		{
+			Assert.IsTrue(TestStringData.IP_ADDRESS_0_0_0_0.IsValidIpAddress());
+		}
+
+		[TestMethod]
+		public void String_Validation_IsValidIpAddress_255_255_255_255_Invalid()
+		{
+			Assert.IsTrue(TestStringData.IP_ADDRESS_255_255_255_255.IsValidIpAddress());
 		}
 	}
 }

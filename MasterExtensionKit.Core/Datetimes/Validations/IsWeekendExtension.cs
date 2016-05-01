@@ -1,4 +1,7 @@
 ﻿using System;
+using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Datetimes.Validations
 {
@@ -11,6 +14,11 @@ namespace MasterExtensionKit.Core.Datetimes.Validations
 		/// <returns>True or False</returns>
 		public static bool IsWeekend(this DateTime source)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			return source.DayOfWeek == DayOfWeek.Sunday || source.DayOfWeek == DayOfWeek.Saturday;
 		}
 	}

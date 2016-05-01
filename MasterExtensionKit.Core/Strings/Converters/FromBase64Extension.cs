@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Converters
@@ -10,9 +11,9 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		{
 			if (source.IsNull())
 			{
-				throw new ArgumentNullException(nameof(source));
+				throw new SourceNullException(nameof(source));
 			}
-
+			
 			var encoding = new ASCIIEncoding();
 			return encoding.GetString(Convert.FromBase64String(source));
 		}

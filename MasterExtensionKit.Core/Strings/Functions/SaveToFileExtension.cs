@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Objects.Validations;
+using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
@@ -17,6 +20,16 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		/// <returns></returns>
 		public static bool SaveToFile(this string source, string fileName, bool append = false, Encoding encoderType = null)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
+			if (!fileName.HasValue())
+			{
+				throw new ArgumentNullException(nameof(fileName));
+			}
+
 			if (encoderType.IsNull())
 			{
 				encoderType = Encoding.Default;
@@ -30,7 +43,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 					streamwriter.Close();
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				//TODO: Do better Exception Handling
 				throw;

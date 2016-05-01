@@ -9,52 +9,73 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MasterExtensionKit.Core</RootNamespace>
     <AssemblyName>MasterExtensionKit.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net40|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug-Net40\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseWithoutNuGet|AnyCPU'">
-    <OutputPath>bin\ReleaseWithoutNuGet\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetRelease|AnyCPU'">
-    <OutputPath>bin\NuGetRelease\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetDebug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net45|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\NuGetDebug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug-Net45\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net46|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug-Net46\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net40|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release-Net40\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net45|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release-Net45\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net46|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release-Net46\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-NuGet|AnyCPU'">
+    <OutputPath>bin\Debug-NuGet\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-NuGet|AnyCPU'">
+    <OutputPath>bin\Release-NuGet\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -73,8 +94,11 @@
     <Compile Include="Collections\Functions\SearchExtension.cs" />
     <Compile Include="Collections\Functions\ShuffleEnumerableExtensions.cs" />
     <Compile Include="Collections\Functions\WhereIfEnumerableExtensions.cs" />
+    <Compile Include="Configuration\EncodingBytes.cs" />
     <Compile Include="Configuration\ErrorMessages.cs" />
     <Compile Include="Configuration\RegExpressions.cs" />
+    <Compile Include="Configuration\SharedCore.cs" />
+    <Compile Include="Configuration\StaticDataStore.cs" />
     <Compile Include="Datetimes\Functions\AgeExtension.cs" />
     <Compile Include="Datetimes\Functions\StartOfWeekExtensions.cs" />
     <Compile Include="Datetimes\Validations\IsWeekendExtension.cs" />
@@ -82,9 +106,14 @@
     <Compile Include="Enums\Functions\EnumDescriptionExtension.cs" />
     <Compile Include="Enums\Functions\EnumGuidExtensions.cs" />
     <Compile Include="Enumerations\HashType.cs" />
+    <Compile Include="Exceptions\EnumNotFoundFromStringException.cs" />
     <Compile Include="Exceptions\EnumNotFoundFromGuidException.cs" />
     <Compile Include="Exceptions\ConversionFailureException.cs" />
+    <Compile Include="Exceptions\MaximunDoubleLimitException.cs" />
+    <Compile Include="Exceptions\MininumDoubleLimitException.cs" />
+    <Compile Include="Exceptions\SourceNullException.cs" />
     <Compile Include="Exceptions\UnknownOrUnsupportedOptionException.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\EnumerableCompareResults.cs" />
     <Compile Include="Numbers\Validations\IsEvenExtension.cs" />
     <Compile Include="Numbers\Validations\IsGreaterThanExtensions.cs" />
@@ -99,17 +128,22 @@
     <Compile Include="Strings\Converters\FromBase64Extension.cs" />
     <Compile Include="Strings\Converters\ToBase64Extension.cs" />
     <Compile Include="Strings\Converters\ToBytesExtension.cs" />
+    <Compile Include="Strings\Converters\ToCamelCaseExtension.cs" />
     <Compile Include="Strings\Converters\ToDateTimeExtension.cs" />
     <Compile Include="Strings\Converters\ToDecimalExtension.cs" />
     <Compile Include="Strings\Converters\ToEnumExtension.cs" />
     <Compile Include="Strings\Converters\ToHashExtension.cs" />
     <Compile Include="Strings\Converters\ToIntegerExtensions.cs" />
-    <Compile Include="Strings\Converters\ToTextStylesExtensions.cs" />
+    <Compile Include="Strings\Converters\ToProperCaseExtension.cs" />
+    <Compile Include="Strings\Converters\ToPascalCaseExtensions.cs" />
     <Compile Include="Strings\Functions\ContainsCultureInvariantExtension.cs" />
     <Compile Include="Strings\Functions\EncryptDecryptExtensions.cs" />
     <Compile Include="Strings\Functions\EqualsCultureInveriantExtension.cs" />
     <Compile Include="Strings\Functions\GetWordCountExtension.cs" />
-    <Compile Include="Strings\Functions\ReadFromFileExtension.cs" />
+    <Compile Include="Strings\Functions\RemoveAlphaExtension.cs" />
+    <Compile Include="Strings\Functions\RemoveNonAlphaNumericExtension.cs" />
+    <Compile Include="Strings\Functions\RemoveNumericExtension.cs" />
+    <Compile Include="Strings\Helpers\StringHelpers.cs" />
     <Compile Include="Strings\Functions\RepeatExtension.cs" />
     <Compile Include="Strings\Functions\SaveToFileExtension.cs" />
     <Compile Include="Strings\Validations\HasValueExtension.cs" />

@@ -1,4 +1,7 @@
 ﻿using System;
+using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
@@ -9,10 +12,28 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="source"></param>
+		/// <param name="ignoreError"></param>
 		/// <returns></returns>
-		public static T ToEnum<T>(this string source) where T : struct
+		public static T ToEnum<T>(this string source, bool ignoreError = true) where T : struct
 		{
-			return (T) Enum.Parse(typeof (T), source, true);
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
+			if (ignoreError)
+			{
+				T returnValue;
+				return Enum.TryParse(source, true, out returnValue) ? returnValue : default(T);
+			}
+			try
+			{
+				return (T) Enum.Parse(typeof (T), source, true);
+			}
+			catch (Exception ex)
+			{
+				throw new EnumNotFoundFromStringException(ErrorMessages.EnumNotFoundFromStringError(source), ex);
+			}
 		}
 	}
 }

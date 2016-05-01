@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Collections.Functions
 {
@@ -8,6 +10,11 @@ namespace MasterExtensionKit.Core.Collections.Functions
 	{
 		public static IEnumerable<T> FilterExact<T>(this IEnumerable<T> source, string propertyName, string value)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			var entities = source.ToList();
 			if (!entities.Any() || string.IsNullOrEmpty(propertyName) || string.IsNullOrWhiteSpace(value))
 			{

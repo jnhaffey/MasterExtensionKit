@@ -1,5 +1,8 @@
-﻿namespace MasterExtensionKit.Core.Configuration
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace MasterExtensionKit.Core.Configuration
 {
+	[ExcludeFromCodeCoverage]
 	internal static class RegExpressions
 	{
 		internal const string UNITED_STATES = @"^\d{5}(?:[-\s]\d{4})?$";

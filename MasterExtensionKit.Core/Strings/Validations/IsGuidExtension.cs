@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text.RegularExpressions;
-using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
@@ -11,22 +11,20 @@ namespace MasterExtensionKit.Core.Strings.Validations
 		/// </summary>
 		/// <param name="source"></param>
 		/// <returns>Boolean</returns>
+		/// <summary>
+		///     Checks if the given string is a valid Guid
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
 		public static bool IsGuid(this string source)
 		{
-			if (!source.HasValue())
-				throw new ArgumentNullException(source);
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
 
-			var format = new Regex(RegExpressions.GUID_REG_EXPRESSION);
-			var match = format.Match(source);
-
-			return match.Success;
+			Guid value;
+			return Guid.TryParse(source, out value);
 		}
-
-		//TODO:BETTER METHOD
-		//public static bool IsValidGUid(this string source)
-		//{
-		//	Guid value;
-		//	return Guid.TryParse(source, out value);
-		//}
 	}
 }

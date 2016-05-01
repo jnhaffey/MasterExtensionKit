@@ -1,6 +1,7 @@
 ﻿using System;
 using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
@@ -14,6 +15,11 @@ namespace MasterExtensionKit.Core.Strings.Converters
 		/// <returns></returns>
 		public static int? ToInteger(this string source, bool ignoreError = true)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
 			int? valueToReturn = null;
 			try
 			{

@@ -1,4 +1,8 @@
 ﻿using System.Globalization;
+using MasterExtensionKit.Core.Configuration;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Objects.Validations;
+using MasterExtensionKit.Core.Strings.Functions;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
@@ -11,23 +15,31 @@ namespace MasterExtensionKit.Core.Strings.Validations
 		/// <returns></returns>
 		public static bool IsNumeric(this string source)
 		{
+			if (source.IsNull())
+			{
+				throw new SourceNullException(nameof(source));
+			}
+
+			if (source.EqualsCultureInveriant(StaticDataStore.MIN_DOUBLE_VALUE))
+			{
+				throw new MininumDoubleLimitException(ErrorMessages.OutterLimitDoubleValueError());
+			}
+
+			if (source.EqualsCultureInveriant(StaticDataStore.MAX_DOUBLE_VALUE))
+			{
+				throw new MaximunDoubleLimitException(ErrorMessages.OutterLimitDoubleValueError(true));
+			}
+
 			float floatValue;
-			if (float.TryParse(source, NumberStyles.Float, NumberFormatInfo.InvariantInfo, out floatValue))
-			{
-				return true;
-			}
-
 			double doubleValue;
-			if (double.TryParse(source, NumberStyles.Float, NumberFormatInfo.InvariantInfo, out doubleValue))
+			decimal decimalValue;
+			if (float.TryParse(source, NumberStyles.Float, NumberFormatInfo.InvariantInfo, out floatValue) ||
+			    double.TryParse(source, NumberStyles.AllowDecimalPoint, NumberFormatInfo.InvariantInfo, out doubleValue) ||
+			    decimal.TryParse(source, NumberStyles.AllowDecimalPoint, NumberFormatInfo.InvariantInfo, out decimalValue))
 			{
 				return true;
 			}
 
-			decimal decimalValue;
-			if (decimal.TryParse(source, NumberStyles.Float, NumberFormatInfo.InvariantInfo, out decimalValue))
-			{
-				return true;
-			}
 
 			long longValue;
 			if (long.TryParse(source, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out longValue))
@@ -35,11 +47,6 @@ namespace MasterExtensionKit.Core.Strings.Validations
 				return true;
 			}
 
-			int intValue;
-			if (int.TryParse(source, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out intValue))
-			{
-				return true;
-			}
 			return false;
 		}
 	}

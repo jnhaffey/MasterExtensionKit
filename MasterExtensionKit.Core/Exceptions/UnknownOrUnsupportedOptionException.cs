@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MasterExtensionKit.Core.Exceptions
 {
+	[ExcludeFromCodeCoverage]
 	public class UnknownOrUnsupportedOptionException : Exception
 	{
 		public UnknownOrUnsupportedOptionException()
