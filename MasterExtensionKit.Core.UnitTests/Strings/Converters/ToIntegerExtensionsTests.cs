@@ -8,6 +8,24 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 	[TestClass]
 	public class ToIntegerExtensionsTests
 	{
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToInteger_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToInteger_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
+
 		[TestMethod]
 		public void String_Converter_ToInteger_IgnoreErrorTrue_Zero_Valid()
 		{
@@ -42,14 +60,14 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[TestMethod]
 		public void String_Converter_ToInteger_IgnoreErrorTrue_AlphaNumeric_Null()
 		{
-			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToInteger());
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.ALPHANUMERIC_STIRNG.ToInteger());
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
 		public void String_Converter_ToInteger_IgnoreErrorFalse_AlphaNumeric_Null()
 		{
-			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToInteger(false));
+			Assert.AreEqual(TestNumberData.INTEGER_NULL, TestStringData.ALPHANUMERIC_STIRNG.ToInteger(false));
 		}
 
 		[TestMethod]

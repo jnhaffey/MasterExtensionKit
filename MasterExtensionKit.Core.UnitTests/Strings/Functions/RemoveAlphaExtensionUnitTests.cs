@@ -7,7 +7,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Functions
 	public class RemoveAlphaExtensionUnitTests
 	{
 		[TestMethod]
-		public void TestMethod1()
+		public void String_Function_RemoveAlpha_Test()
 		{
 			Assert.Fail();
 		}

@@ -81,7 +81,7 @@
     <Compile Include="Collections\Functions\SearchExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\WhereIfEnumerableExtensionsTests.cs" />
     <Compile Include="Datetimes\Functions\AgeExtensionsUnitTests.cs" />
-    <Compile Include="Datetimes\Functions\AgeExtensionUnitTests.cs" />
+    <Compile Include="Datetimes\Functions\StartOfWeekExtensionUnitTests.cs" />
     <Compile Include="Datetimes\Validations\IsWeekendExtensionUnitTests.cs" />
     <Compile Include="Enums\Functions\EnumDescriptionExtensionUnitTests.cs" />
     <Compile Include="Enums\Functions\EnumGuidExtensionsUnitTests.cs" />
@@ -106,7 +106,7 @@
     <Compile Include="Strings\Converters\ToBase64ExtensionUnitTests.cs" />
     <Compile Include="Strings\Converters\FromBase64ExtensionUnitTests.cs" />
     <Compile Include="Strings\Converters\ToBytesExtensionUnitTests.cs" />
-    <Compile Include="Strings\Functions\EncryptDecryptExtensionsTests.cs" />
+    <Compile Include="Strings\Functions\EncryptDecryptExtensionUnitTests.cs" />
     <Compile Include="Strings\Functions\SaveToFileExtensionUnitTests.cs" />
     <Compile Include="Strings\Functions\ContainsCultureInvariantExtesionUnitTests.cs" />
     <Compile Include="Strings\Functions\EqualsCultureInveriantExtensionUnitTests.cs" />
@@ -124,8 +124,11 @@
     <Compile Include="Strings\Validations\IsValidPostalZipCodeExtensionUnitTest.cs" />
     <Compile Include="_Shared\TestByteData.cs" />
     <Compile Include="_Shared\TestCollectionData.cs" />
+    <Compile Include="_Shared\TestDateTimeData.cs" />
     <Compile Include="_Shared\TestEnumData.cs" />
+    <Compile Include="_Shared\TestGuidData.cs" />
     <Compile Include="_Shared\TestNumberData.cs" />
+    <Compile Include="_Shared\TestObjectData.cs" />
     <Compile Include="_Shared\TestSharedData.cs" />
     <Compile Include="_Shared\TestStringData.cs" />
   </ItemGroup>

@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Text;
-using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Functions;
 using MasterExtensionKit.Core.Strings.Helpers;
 using MasterExtensionKit.Core.UnitTests._Shared;
@@ -16,7 +15,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Helpers
 		#region General String Tests
 
 		[TestMethod]
-		[ExpectedException(typeof(FileNotFoundException), "")]
+		[ExpectedException(typeof (FileNotFoundException), "")]
 		public void String_Function_ReadFromFile_NoFile_Exception()
 		{
 			_actualResults = TestStringData.NULL_STRING;
@@ -44,7 +43,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Helpers
 		public void String_Function_ReadFromFile_Not_Empty_Default_Valid()
 		{
 			CreateFile(null);
-			_actualResults = TestStringData.RANDOM_ALPHANUMERIC_STIRNG;
+			_actualResults = TestStringData.ALPHANUMERIC_STIRNG;
 			StringHelpers.ReadFromFile(out _actualResults, TestSharedData.TEST_FILE_LOCATION_FILE_NAME);
 			Assert.AreEqual(TestStringData.STRING_PROPER_STYLE, _actualResults);
 		}

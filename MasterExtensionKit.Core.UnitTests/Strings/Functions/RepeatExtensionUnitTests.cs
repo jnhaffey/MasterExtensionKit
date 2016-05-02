@@ -11,8 +11,8 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Functions
 		[TestMethod]
 		public void String_Function_Repeat_Twice_Valid()
 		{
-			var expectedResults = TestStringData.RANDOM_ALPHANUMERIC_STIRNG + TestStringData.RANDOM_ALPHANUMERIC_STIRNG;
-			var actualResults = TestStringData.RANDOM_ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_POSITIVE_TWO);
+			var expectedResults = TestStringData.ALPHANUMERIC_STIRNG + TestStringData.ALPHANUMERIC_STIRNG;
+			var actualResults = TestStringData.ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_POSITIVE_TWO);
 			Assert.AreEqual(expectedResults, actualResults);
 		}
 
@@ -20,14 +20,14 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Functions
 		[ExpectedException(typeof (UnknownOrUnsupportedOptionException), "The 'count' does not support the value: 0")]
 		public void String_Function_Repeat_Zero_Valid()
 		{
-			var actualResults = TestStringData.RANDOM_ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_ZERO);
+			var actualResults = TestStringData.ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_ZERO);
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof (UnknownOrUnsupportedOptionException), "The 'count' does not support the value: -1")]
 		public void String_Function_Repeat_NegitiveOne_Valid()
 		{
-			var actualResults = TestStringData.RANDOM_ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_NEGATIVE_ONE);
+			var actualResults = TestStringData.ALPHANUMERIC_STIRNG.Repeat(TestNumberData.INTEGER_NEGATIVE_ONE);
 		}
 
 		//[TestMethod]

@@ -7,7 +7,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Functions
 	public class RemoveNumericExtensionUnitTests
 	{
 		[TestMethod]
-		public void TestMethod1()
+		public void String_Function_RemoveNumeric_Test()
 		{
 			Assert.Fail();
 		}

@@ -1,5 +1,7 @@
 ﻿using MasterExtensionKit.Core.Enumerations;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Converters;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
@@ -7,7 +9,23 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 	[TestClass]
 	public class ToHashExtensionsUnitTest
 	{
-		private const string _DATA_TO_HASH = "I am test data that will be hashed";
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToHash_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToHash_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
 
 		// REMOVING THESE UNIT TESTS AS THE HASHES ARE UNABLE TO BE TESTED
 
@@ -68,53 +86,39 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		//}
 
 		[TestMethod]
-		public void ComputeHash_MD5()
+		public void Strings_Converters_ComputeHash_MD5_Valid()
 		{
-			var expectedResults = "df1bb7a4f090c13f0d5ae866e9505b86";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.MD5);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_MD5, TestStringData.DATA_TO_HASH.ComputeHash(HashType.MD5));
 		}
 
 		[TestMethod]
-		public void ComputeHash_RIPEMD160()
+		public void Strings_Converters_ComputeHash_RIPEMD160_Valid()
 		{
-			var expectedResults = "1d4b03163a73c98ec9ca9e8db54193ac71470f40";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.RIPEMD160);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_RIPEMD160, TestStringData.DATA_TO_HASH.ComputeHash(HashType.RIPEMD160));
 		}
 
 		[TestMethod]
-		public void ComputeHash_SHA1()
+		public void Strings_Converters_ComputeHash_SHA1_Valid()
 		{
-			var expectedResults = "b06fb7cf44efb838b7d6267a7ba2efe738a6da5c";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.SHA1);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_SHA1, TestStringData.DATA_TO_HASH.ComputeHash(HashType.SHA1));
 		}
 
 		[TestMethod]
-		public void ComputeHash_SHA256()
+		public void Strings_Converters_ComputeHash_SHA256_Valid()
 		{
-			var expectedResults = "53a78ea2b4c7b0b16349b9127becb6935ebed1a4929e65400d2116e1d506b2c4";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.SHA256);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_SHA256, TestStringData.DATA_TO_HASH.ComputeHash(HashType.SHA256));
 		}
 
 		[TestMethod]
-		public void ComputeHash_SHA384()
+		public void Strings_Converters_ComputeHash_SHA384_Valid()
 		{
-			var expectedResults =
-				"5264817ef76c9b52c12873096f09a66142642b3283b71ed026a3c2f2905d5b11dd071e2d1753f137ae029626b5f07cd3";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.SHA384);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_SHA384, TestStringData.DATA_TO_HASH.ComputeHash(HashType.SHA384));
 		}
 
 		[TestMethod]
-		public void ComputeHash_SHA512()
+		public void Strings_Converters_ComputeHash_SHA512_Valid()
 		{
-			var expectedResults =
-				"2bc4aac7da3e1f8682a074d96e7da5de912c1e9419e77f60e0fa12eed373331462d82e4bb10aed8996694373b969ed520c5050b843aafdf710dab0923b1f60e5";
-			var actualResults = _DATA_TO_HASH.ComputeHash(HashType.SHA512);
-			Assert.AreEqual(expectedResults, actualResults);
+			Assert.AreEqual(TestStringData.HASH_DATA_SHA512, TestStringData.DATA_TO_HASH.ComputeHash(HashType.SHA512));
 		}
 	}
 }

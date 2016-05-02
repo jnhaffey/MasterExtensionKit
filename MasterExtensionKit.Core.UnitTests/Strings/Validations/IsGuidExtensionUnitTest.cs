@@ -8,10 +8,21 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	[TestClass]
 	public class IsGuidExtensionUnitTest
 	{
+		#region Invalid
+
+		[TestMethod]
+		public void String_Validation_IsGuid_Format_Unknown_Invalid()
+		{
+			var unknownGuidFormat = $"{TestStringData.GUID_B_FORMAT}{TestStringData.GUID_D_FORMAT}";
+			Assert.IsFalse(unknownGuidFormat.IsGuid());
+		}
+
+		#endregion
+
 		#region General String Tests
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
+		[ExpectedException(typeof (SourceNullException), "")]
 		public void String_Validation_IsGuid_Null_Exception()
 		{
 			TestStringData.NULL_STRING.IsGuid();
@@ -24,6 +35,8 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 		}
 
 		#endregion
+
+		#region Guid Formats
 
 		[TestMethod]
 		public void String_Validation_IsGuid_Format_B_Valid()
@@ -55,11 +68,6 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 			Assert.IsTrue(TestStringData.GUID_X_FORMAT.IsGuid());
 		}
 
-		[TestMethod]
-		public void String_Validation_IsGuid_Format_Unknown_Invalid()
-		{
-			var unknownGuidFormat = $"{TestStringData.GUID_B_FORMAT}{TestStringData.GUID_D_FORMAT}";
-			Assert.IsFalse(unknownGuidFormat.IsGuid());
-		}
+		#endregion
 	}
 }

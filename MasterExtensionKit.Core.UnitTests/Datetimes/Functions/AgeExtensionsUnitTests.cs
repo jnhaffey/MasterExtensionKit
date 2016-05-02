@@ -1,5 +1,7 @@
 ﻿using System;
 using MasterExtensionKit.Core.Datetimes.Functions;
+using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Datetimes.Functions
@@ -7,31 +9,46 @@ namespace MasterExtensionKit.Core.UnitTests.Datetimes.Functions
 	[TestClass]
 	public class AgeExtensionsUnitTests
 	{
-		private readonly AgeExtensionUnitTests _ageExtensionUnitTests = new AgeExtensionUnitTests();
-		private DateTime _baseDate = DateTime.Now.AddYears(-5);
+		#region General String Tests
 
 		[TestMethod]
-		public void Age_FiveYearsAgoYesterday_Five()
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void Datetime_Function_Age_Null_Exception()
 		{
-			var dateToTest = _baseDate.AddDays(-1);
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void Datetime_Function_Age_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
+
+		[TestMethod]
+		public void Datetime_Function_Age_FiveYearsAgoYesterday_Five()
+		{
+			var dateToTest = TestDateTimeData.TODAY_MINUS_FIVE_YEARS.AddDays(-1);
 			const int expectedResult = 5;
 			var actualResult = dateToTest.Age();
 			Assert.AreEqual(expectedResult, actualResult);
 		}
 
 		[TestMethod]
-		public void Age_FiveYearsAgoToday_Five()
+		public void Datetime_Function_Age_FiveYearsAgoToday_Five()
 		{
-			var dateToTest = _baseDate;
+			var dateToTest = TestDateTimeData.TODAY_MINUS_FIVE_YEARS;
 			const int expectedResult = 5;
 			var actualResult = dateToTest.Age();
 			Assert.AreEqual(expectedResult, actualResult);
 		}
 
 		[TestMethod]
-		public void Age_FiveYearsAgoTomorrow_Four()
+		public void Datetime_Function_Age_FiveYearsAgoTomorrow_Four()
 		{
-			var dateToTest = _baseDate.AddDays(+1);
+			var dateToTest = TestDateTimeData.TODAY_MINUS_FIVE_YEARS.AddDays(+1);
 			const int expectedResult = 4;
 			var actualResult = dateToTest.Age();
 			Assert.AreEqual(expectedResult, actualResult);

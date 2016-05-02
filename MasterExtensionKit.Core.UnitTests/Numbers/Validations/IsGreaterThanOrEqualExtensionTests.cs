@@ -1,4 +1,5 @@
-﻿using MasterExtensionKit.Core.Numbers.Validations;
+﻿using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.Numbers.Validations;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -6,6 +7,24 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 {
 	public class IsGreaterThanOrEqualExtensionTests
 	{
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void Number_Validation_IsGreaterThanOrEqual_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void Number_Validation_IsGreaterThanOrEqual_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
+
 		[TestMethod]
 		public void Number_Validation_Number_Validation_Integer_NegativeTwo_IsGreaterThanOrEqual_NegativeTwo_True()
 		{

@@ -8,6 +8,20 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	public class HasValueExtensionUnitTest
 	{
 		[TestMethod]
+		public void String_Validation_HasValue_Valid()
+		{
+			Assert.IsTrue(TestStringData.ALPHANUMERIC_STIRNG.HasValue());
+		}
+
+		[TestMethod]
+		public void String_Validation_HasValue_WhiteSpace_Invalid()
+		{
+			Assert.IsFalse(TestStringData.WHITESPACE_STRING.HasValue());
+		}
+
+		#region General Tests
+
+		[TestMethod]
 		public void String_Validation_HasValue_Null_Invalid()
 		{
 			Assert.IsFalse(TestStringData.NULL_STRING.HasValue());
@@ -19,16 +33,6 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 			Assert.IsFalse(TestStringData.EMPTY_STRING.HasValue());
 		}
 
-		[TestMethod]
-		public void String_Validation_HasValue_Valid()
-		{
-			Assert.IsTrue(TestStringData.RANDOM_ALPHANUMERIC_STIRNG.HasValue());
-		}
-
-		[TestMethod]
-		public void String_Validation_HasValue_WhiteSpace_Invalid()
-		{
-			Assert.IsFalse(TestStringData.WHITESPACE_STRING.HasValue());
-		}
+		#endregion
 	}
 }

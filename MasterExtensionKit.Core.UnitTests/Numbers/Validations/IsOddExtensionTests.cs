@@ -1,3 +1,4 @@
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Numbers.Validations;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -35,5 +36,23 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 		{
 			Assert.IsFalse(TestNumberData.INTEGER_POSITIVE_TWO.IsOdd());
 		}
+
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void Number_Validation_IsOdd_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void Number_Validation_IsOdd_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
 	}
 }

@@ -87,7 +87,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 		[TestMethod]
 		public void String_Validation_IsNumeric_AlphaNumeric_Invalid()
 		{
-			Assert.IsFalse(TestStringData.RANDOM_ALPHANUMERIC_STIRNG.IsNumeric());
+			Assert.IsFalse(TestStringData.ALPHANUMERIC_STIRNG.IsNumeric());
 		}
 
 		[TestMethod]

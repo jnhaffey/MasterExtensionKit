@@ -8,8 +8,26 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 	[TestClass]
 	public class ToEnumExtensionsUnitTest
 	{
+		#region General String Tests
+
 		[TestMethod]
-		public void ToEnum_IgnoreErrors_Administrator_Valid()
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToEnum_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToEnum_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
+
+		[TestMethod]
+		public void String_Converter_ToEnum_IgnoreErrors_Administrator_Valid()
 		{
 			var expectedResult = TestEnumData.UserType.ADMINISTRATOR;
 			var actualResult = "Administrator".ToEnum<TestEnumData.UserType>();
@@ -17,7 +35,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		}
 
 		[TestMethod]
-		public void ToEnum_IncludeErrors_Administrator_Valid()
+		public void String_Converter_ToEnum_IncludeErrors_Administrator_Valid()
 		{
 			var expectedResult = TestEnumData.UserType.ADMINISTRATOR;
 			var actualResult = "Administrator".ToEnum<TestEnumData.UserType>(false);
@@ -25,7 +43,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		}
 
 		[TestMethod]
-		public void ToEnum_IgnoreErrors_User_Invalid()
+		public void String_Converter_ToEnum_IgnoreErrors_User_Invalid()
 		{
 			var expectedResult = TestEnumData.UserType.NONE;
 			var actualResult = "User".ToEnum<TestEnumData.UserType>();
@@ -34,7 +52,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 
 		[TestMethod]
 		[ExpectedException(typeof(EnumNotFoundFromStringException), "No enum value was found with value: User")]
-		public void ToEnum_IncludeErrors_User_Invalid()
+		public void String_Converter_ToEnum_IncludeErrors_User_Invalid()
 		{
 			var expectedResult = TestEnumData.UserType.NONE;
 			var actualResult = "User".ToEnum<TestEnumData.UserType>(false);

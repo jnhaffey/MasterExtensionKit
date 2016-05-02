@@ -22,7 +22,7 @@ namespace MasterExtensionKit.Core.UnitTests._Shared
 			[EnumGuid("")]
 			EMPTY_GUID = 1,
 
-			[EnumGuid("9EF4F4BE-69E2-4C43-98DD-9531CC721621")]
+			[EnumGuid(TestStringData.GUID_D_FORMAT)]
 			HAS_GUID = 2
 		}
 

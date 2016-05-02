@@ -1,5 +1,5 @@
-﻿using System;
-using MasterExtensionKit.Core.Objects.Validations;
+﻿using MasterExtensionKit.Core.Objects.Validations;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Objects.Validations
@@ -7,19 +7,16 @@ namespace MasterExtensionKit.Core.UnitTests.Objects.Validations
 	[TestClass]
 	public class IsNullExtensionUnitTests
 	{
-		private Object _nullObject;
-		private readonly Object _emptyObject = new object();
-
 		[TestMethod]
-		public void IsNull_True()
+		public void Object_Validation_IsNull_True()
 		{
-			Assert.IsTrue(_nullObject.IsNull());
+			Assert.IsTrue(TestObjectData.NULL_OBJECT.IsNull());
 		}
 
 		[TestMethod]
-		public void IsNull_False()
+		public void Object_Validation_IsNull_False()
 		{
-			Assert.IsFalse(_emptyObject.IsNull());
+			Assert.IsFalse(TestObjectData.EMPTY_OBJECT.IsNull());
 		}
 	}
 }

@@ -1,7 +1,5 @@
-﻿using System.IO;
-using MasterExtensionKit.Core.Exceptions;
+﻿using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Converters;
-using MasterExtensionKit.Core.Strings.Functions;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,6 +8,24 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 	[TestClass]
 	public class ToDecimalExtensionsTests
 	{
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToDecimal_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(SourceNullException), "")]
+		public void String_Converter_ToDecimal_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
+
 		[TestMethod]
 		public void String_Converter_ToDecimal_IgnoreErrorTrue_Zero_Valid()
 		{
@@ -35,7 +51,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(ConversionFailureException), "Failed to convert string to interger.")]
+		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
 		public void String_Converter_ToDecimal_IgnoreErrorFalse_AlphaOnly_Exception()
 		{
 			Assert.AreEqual(TestNumberData.DECIMAL_NULL, TestStringData.ALPHA_ONLY_STRING.ToDecimal(false));
@@ -44,14 +60,14 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[TestMethod]
 		public void String_Converter_ToDecimal_IgnoreErrorTrue_AlphaNumeric_Null()
 		{
-			Assert.AreEqual(TestNumberData.DECIMAL_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToDecimal());
+			Assert.AreEqual(TestNumberData.DECIMAL_NULL, TestStringData.ALPHANUMERIC_STIRNG.ToDecimal());
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(ConversionFailureException), "Failed to convert string to interger.")]
+		[ExpectedException(typeof (ConversionFailureException), "Failed to convert string to interger.")]
 		public void String_Converter_ToDecimal_IgnoreErrorFalse_AlphaNumeric_Null()
 		{
-			Assert.AreEqual(TestNumberData.DECIMAL_NULL, TestStringData.RANDOM_ALPHANUMERIC_STIRNG.ToDecimal(false));
+			Assert.AreEqual(TestNumberData.DECIMAL_NULL, TestStringData.ALPHANUMERIC_STIRNG.ToDecimal(false));
 		}
 
 		[TestMethod]

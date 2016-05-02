@@ -1,5 +1,5 @@
-﻿using System;
-using MasterExtensionKit.Core.Enums.Functions;
+﻿using MasterExtensionKit.Core.Enums.Functions;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,21 +8,36 @@ namespace MasterExtensionKit.Core.UnitTests.Enums.Functions
 	[TestClass]
 	public class EnumGuidExtensionsUnitTests
 	{
-		private const string _STRING_GUID = "9EF4F4BE-69E2-4C43-98DD-9531CC721621";
-		private readonly Guid _pureGuid = Guid.Parse(_STRING_GUID);
-
 		[TestMethod]
-		public void EnumGuid_GetGuid_Matches()
+		public void Enum_Function_EnumGuid_GetGuid_Matches()
 		{
-			Assert.AreEqual(_pureGuid, TestEnumData.GuidEnum.HAS_GUID.GetGuid());
+			Assert.AreEqual(TestGuidData.GUID_D_FORMAT, TestEnumData.GuidEnum.HAS_GUID.GetGuid());
 		}
 
 		[TestMethod]
-		public void EnumGuid_GetEnum_Matches()
+		public void Enum_Function_EnumGuid_GetEnum_Matches()
 		{
 			var myEnum = TestEnumData.GuidEnum.EMPTY_GUID;
-			var actualResult = myEnum.GetEnumValue(_pureGuid);
+			var actualResult = myEnum.GetEnumValue(TestGuidData.GUID_D_FORMAT);
 			Assert.AreEqual(TestEnumData.GuidEnum.HAS_GUID, actualResult);
 		}
+
+		#region General String Tests
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void Enum_Function_GetGuid_Null_Exception()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void Enum_Function_GetGuid_Empty_Invalid()
+		{
+			Assert.Fail();
+		}
+
+		#endregion
 	}
 }

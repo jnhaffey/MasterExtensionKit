@@ -9,19 +9,6 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 	public class IsValidIpAddressExtensionUnitTest
 	{
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException),"")]
-		public void String_Validation_IsValidIpAddress_Null_Exception()
-		{
-			TestStringData.NULL_STRING.IsValidIpAddress();
-		}
-
-		[TestMethod]
-		public void String_Validation_IsValidIpAddress_Empty_Invalid()
-		{
-			Assert.IsFalse(TestStringData.EMPTY_STRING.IsValidIpAddress());
-		}
-
-		[TestMethod]
 		public void String_Validation_IsValidIpAddress_1_1_1_1_Valid()
 		{
 			Assert.IsTrue(TestStringData.IP_ADDRESS_1_1_1_1.IsValidIpAddress());
@@ -44,5 +31,22 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 		{
 			Assert.IsTrue(TestStringData.IP_ADDRESS_255_255_255_255.IsValidIpAddress());
 		}
+
+		#region General Tests
+
+		[TestMethod]
+		[ExpectedException(typeof (SourceNullException), "")]
+		public void String_Validation_IsValidIpAddress_Null_Exception()
+		{
+			TestStringData.NULL_STRING.IsValidIpAddress();
+		}
+
+		[TestMethod]
+		public void String_Validation_IsValidIpAddress_Empty_Invalid()
+		{
+			Assert.IsFalse(TestStringData.EMPTY_STRING.IsValidIpAddress());
+		}
+
+		#endregion
 	}
 }
