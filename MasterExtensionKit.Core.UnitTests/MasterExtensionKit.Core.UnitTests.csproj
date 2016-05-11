@@ -79,6 +79,7 @@
     <Compile Include="Collections\Functions\PageExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\RangeExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\SearchExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\DistinctByExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\WhereIfEnumerableExtensionsTests.cs" />
     <Compile Include="Datetimes\Functions\AgeExtensionsUnitTests.cs" />
     <Compile Include="Datetimes\Functions\StartOfWeekExtensionUnitTests.cs" />

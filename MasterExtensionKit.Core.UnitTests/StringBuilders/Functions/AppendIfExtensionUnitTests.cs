@@ -14,14 +14,14 @@ namespace MasterExtensionKit.Core.UnitTests.StringBuilders.Functions
 
 		[TestMethod]
 		[ExpectedException(typeof(SourceNullException), "")]
-		public void StringBuilder_Function_To_Null_Exception()
+		public void StringBuilder_Function_AppendIf_Null_Exception()
 		{
 			Assert.Fail();
 		}
 
 		[TestMethod]
 		[ExpectedException(typeof(SourceNullException), "")]
-		public void StringBuilder_Function_To_Empty_Invalid()
+		public void StringBuilder_Function_AppendIf_Empty_Invalid()
 		{
 			Assert.Fail();
 		}

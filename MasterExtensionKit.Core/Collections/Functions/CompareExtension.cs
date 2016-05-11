@@ -8,22 +8,29 @@ namespace MasterExtensionKit.Core.Collections.Functions
 {
 	public static class CompareExtension
 	{
-		public static EnumerableCompareResults<T> Compare<T>(this IEnumerable<T> source1, IEnumerable<T> source2)
+		/// <summary>
+		///     Compares two collections of the same type
+		/// </summary>
+		/// <typeparam name="T">Type of Collection</typeparam>
+		/// <param name="source">Source Collection</param>
+		/// <param name="secondaryCollection">Secondary Collection</param>
+		/// <returns type="CollectionCompareResults&lt;T&gt;">Provides list of what is missing in each collection, respectively</returns>
+		public static CollectionCompareResults<T> Compare<T>(this IEnumerable<T> source, IEnumerable<T> secondaryCollection)
 		{
-			if (source1.IsNull())
+			if (source.IsNull())
 			{
-				throw new SourceNullException(nameof(source1));
+				throw new SourceNullException(nameof(source));
 			}
 
-			if (source2.IsNull())
+			if (secondaryCollection.IsNull())
 			{
-				throw new SourceNullException(nameof(source2));
+				throw new SourceNullException(nameof(secondaryCollection));
 			}
 
-			var results = new EnumerableCompareResults<T>
+			var results = new CollectionCompareResults<T>
 			{
-				AddedRecords = source2.Except(source1).ToList(),
-				RemovedRecords = source1.Except(source2).ToList()
+				RecordsMissingInSourceCollection = secondaryCollection.Except(source).ToList(),
+				RecordsMissingInSecondaryCollection = source.Except(secondaryCollection).ToList()
 			};
 			return results;
 		}

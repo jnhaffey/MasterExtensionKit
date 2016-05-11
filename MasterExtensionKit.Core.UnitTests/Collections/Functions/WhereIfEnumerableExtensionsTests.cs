@@ -32,7 +32,7 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 		{
 			var onlyAccountsLessThan100 = true;
 			var expectedCount = 3;
-			var actualResult = TestCollectionData.Customers
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS
 				.WhereIf(onlyAccountsLessThan100, c => c.AccountBalance < 100)
 				.Where(c => c.FirstName.Contains('a'))
 				.ToList();
@@ -44,7 +44,7 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 		{
 			var onlyAccountsLessThan100 = false;
 			var expectedCount = 5;
-			var actualResult = TestCollectionData.Customers
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS
 				.WhereIf(onlyAccountsLessThan100, c => c.AccountBalance < 100)
 				.Where(c => c.FirstName.Contains('a'))
 				.ToList();

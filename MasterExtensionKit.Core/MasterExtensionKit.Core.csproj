@@ -85,6 +85,7 @@
     <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
     <Compile Include="Attributes\EnumGuidAttribute.cs" />
     <Compile Include="Collections\Functions\CompareExtension.cs" />
+    <Compile Include="Collections\Functions\DistinctByExtension.cs" />
     <Compile Include="Collections\Functions\FilterExactExtension.cs" />
     <Compile Include="Collections\Functions\FilterExtensions.cs" />
     <Compile Include="Collections\Functions\OrderByDescendingExtension.cs" />
@@ -114,7 +115,7 @@
     <Compile Include="Exceptions\SourceNullException.cs" />
     <Compile Include="Exceptions\UnknownOrUnsupportedOptionException.cs" />
     <Compile Include="Helpers\Helpers.cs" />
-    <Compile Include="Models\EnumerableCompareResults.cs" />
+    <Compile Include="Models\CollectionCompareResults.cs" />
     <Compile Include="Numbers\Validations\IsEvenExtension.cs" />
     <Compile Include="Numbers\Validations\IsGreaterThanExtensions.cs" />
     <Compile Include="Numbers\Validations\IsGreaterThanOrEqualExtensions.cs" />

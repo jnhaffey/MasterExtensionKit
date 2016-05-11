@@ -30,15 +30,15 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 		[TestMethod]
 		public void Collection_Function_Shuffle_ListDoesNotMatch()
 		{
-			var shuffledList = TestCollectionData.OrderNumbers.Shuffle();
-			Assert.AreNotEqual(TestCollectionData.OrderNumbers, shuffledList);
+			var shuffledList = TestCollectionData.ORDER_OF_NUMBERS_1_THRU_5.Shuffle();
+			Assert.AreNotEqual(TestCollectionData.ORDER_OF_NUMBERS_1_THRU_5, shuffledList);
 		}
 
 		[TestMethod]
 		public void Collection_Function_Shuffle_ListCountMatch()
 		{
-			var shuffledList = TestCollectionData.OrderNumbers.Shuffle();
-			Assert.AreEqual(TestCollectionData.OrderNumbers.Count(), shuffledList.Count());
+			var shuffledList = TestCollectionData.ORDER_OF_NUMBERS_1_THRU_5.Shuffle();
+			Assert.AreEqual(TestCollectionData.ORDER_OF_NUMBERS_1_THRU_5.Count(), shuffledList.Count());
 		}
 	}
 }
