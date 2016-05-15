@@ -14,14 +14,22 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[ExpectedException(typeof(SourceNullException), "")]
 		public void String_Converter_ToDecimal_Null_Exception()
 		{
-			Assert.Fail();
+			TestStringData.NULL_STRING.ToDecimal();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void String_Converter_ToDecimal_Empty_Invalid()
+		public void String_Converter_ToDecimal_Empty_IgnoreErrors_Invalid()
 		{
-			Assert.Fail();
+			var actualResults = TestStringData.EMPTY_STRING.ToDecimal();
+			Assert.IsNull(actualResults);
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(ConversionFailureException),"")]
+		public void String_Converter_ToDecimal_Empty_IncludeErrors_Invalid()
+		{
+			var actualResults = TestStringData.EMPTY_STRING.ToDecimal(false);
+			Assert.AreEqual(0, actualResults);
 		}
 
 		#endregion

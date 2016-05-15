@@ -6,16 +6,19 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Collections.Functions
 {
+	/// <summary>
+	/// Collection Extension Method
+	/// </summary>
 	public static class CompareExtension
 	{
 		/// <summary>
 		///     Compares two collections of the same type
 		/// </summary>
-		/// <typeparam name="T">Type of Collection</typeparam>
+		/// <typeparam name="TSource">Type of Collection</typeparam>
 		/// <param name="source">Source Collection</param>
 		/// <param name="secondaryCollection">Secondary Collection</param>
-		/// <returns type="CollectionCompareResults&lt;T&gt;">Provides list of what is missing in each collection, respectively</returns>
-		public static CollectionCompareResults<T> Compare<T>(this IEnumerable<T> source, IEnumerable<T> secondaryCollection)
+		/// <returns type="CollectionCompareResults">Provides list of what is missing in each collection, respectively</returns>
+		public static CollectionCompareResults<TSource> Compare<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> secondaryCollection)
 		{
 			if (source.IsNull())
 			{
@@ -27,11 +30,9 @@ namespace MasterExtensionKit.Core.Collections.Functions
 				throw new SourceNullException(nameof(secondaryCollection));
 			}
 
-			var results = new CollectionCompareResults<T>
-			{
-				RecordsMissingInSourceCollection = secondaryCollection.Except(source).ToList(),
-				RecordsMissingInSecondaryCollection = source.Except(secondaryCollection).ToList()
-			};
+			var results = new CollectionCompareResults<TSource>(
+				secondaryCollection.Except(source).ToList(),
+				source.Except(secondaryCollection).ToList());
 			return results;
 		}
 	}

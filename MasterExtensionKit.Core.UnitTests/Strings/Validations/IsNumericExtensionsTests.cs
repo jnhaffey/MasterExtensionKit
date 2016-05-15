@@ -36,7 +36,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 		///     While this should be true it returns false due to a 'old issue' in the double.tryparse / double.parse
 		/// </summary>
 		[TestMethod]
-		[ExpectedException(typeof(MaximunDoubleLimitException), "The maximum limit of a double was supplied and is unable to parse")]
+		[ExpectedException(typeof(MaximumDoubleLimitException), "The maximum limit of a double was supplied and is unable to parse")]
 		public void String_Validation_IsNumeric_Double_MaxValue_Exception()
 		{
 			Assert.IsTrue(TestStringData.DOUBLE_MIN_VALUE.IsNumeric());
@@ -52,7 +52,7 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Validations
 		///     While this should be true it returns false due to a 'old issue' in the double.tryparse / double.parse
 		/// </summary>
 		[TestMethod]
-		[ExpectedException(typeof(MininumDoubleLimitException), "The minimum limit of a double was supplied and is unable to parse")]
+		[ExpectedException(typeof(MinimumDoubleLimitException), "The minimum limit of a double was supplied and is unable to parse")]
 		public void String_Validation_IsNumeric_Double_MinValue_Exception()
 		{
 			Assert.IsTrue(TestStringData.DOUBLE_MAX_VALUE.IsNumeric());

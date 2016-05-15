@@ -4,15 +4,18 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.StringBuilders.Functions
 {
+	/// <summary>
+	///     StringBuilder Extension Method
+	/// </summary>
 	public static class AppendIfExtension
 	{
 		/// <summary>
-		///     Append to a StringBuilder conditionally
+		///     Conditionally Append to a StringBuilder
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="condition"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <param name="source">The stringbuilder source</param>
+		/// <param name="condition">The condition to include</param>
+		/// <param name="value">The string value to append</param>
+		/// <returns>The updated stringbuilder source</returns>
 		public static StringBuilder AppendIf(this StringBuilder source, bool condition, string value)
 		{
 			if (source.IsNull())
@@ -24,6 +27,7 @@ namespace MasterExtensionKit.Core.StringBuilders.Functions
 			{
 				source.Append(value);
 			}
+
 			return source;
 		}
 	}

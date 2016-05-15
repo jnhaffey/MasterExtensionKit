@@ -4,18 +4,16 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class IsGuidExtension
 	{
 		/// <summary>
-		///     Checks if the given string is a valid Guid
+		///     Will validate if a string is a valid Guid
 		/// </summary>
-		/// <param name="source"></param>
-		/// <returns>Boolean</returns>
-		/// <summary>
-		///     Checks if the given string is a valid Guid
-		/// </summary>
-		/// <param name="source"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsGuid(this string source)
 		{
 			if (source.IsNull())

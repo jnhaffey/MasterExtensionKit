@@ -89,7 +89,7 @@
     <Compile Include="Collections\Functions\FilterExactExtension.cs" />
     <Compile Include="Collections\Functions\FilterExtensions.cs" />
     <Compile Include="Collections\Functions\OrderByDescendingExtension.cs" />
-    <Compile Include="Collections\Functions\OrderByExtension.cs" />
+    <Compile Include="Collections\Functions\OrderByAscendingExtension.cs" />
     <Compile Include="Collections\Functions\PageExtension.cs" />
     <Compile Include="Collections\Functions\RangeExtension.cs" />
     <Compile Include="Collections\Functions\SearchExtension.cs" />
@@ -110,8 +110,11 @@
     <Compile Include="Exceptions\EnumNotFoundFromStringException.cs" />
     <Compile Include="Exceptions\EnumNotFoundFromGuidException.cs" />
     <Compile Include="Exceptions\ConversionFailureException.cs" />
-    <Compile Include="Exceptions\MaximunDoubleLimitException.cs" />
-    <Compile Include="Exceptions\MininumDoubleLimitException.cs" />
+    <Compile Include="Exceptions\MaximumDoubleLimitException.cs" />
+    <Compile Include="Exceptions\MinimumDoubleLimitException.cs" />
+    <Compile Include="Exceptions\PageOutOfRangeException.cs" />
+    <Compile Include="Exceptions\PropertyNotFoundException.cs" />
+    <Compile Include="Exceptions\SourceEmptyException.cs" />
     <Compile Include="Exceptions\SourceNullException.cs" />
     <Compile Include="Exceptions\UnknownOrUnsupportedOptionException.cs" />
     <Compile Include="Helpers\Helpers.cs" />

@@ -3,14 +3,17 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Numbers.Validations
 {
+	/// <summary>
+	///     Number Extension Method
+	/// </summary>
 	public static class IsLessThanOrEqualExtensions
 	{
 		/// <summary>
-		///     Checks if given number is less than or equal to provided number
+		///     Evaluates if given number is less than or equal to provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="maximumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="maximumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsLessThanOrEqual(this int source, int maximumValue)
 		{
 			if (source.IsNull())
@@ -22,11 +25,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		}
 
 		/// <summary>
-		///     Checks if given number is less than or equal to provided number
+		///     Evaluates if given number is less than or equal to provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="maximumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="maximumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsLessThanOrEqual(this decimal source, decimal maximumValue)
 		{
 			if (source.IsNull())
@@ -38,11 +41,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		}
 
 		/// <summary>
-		///     Checks if given number is less than or equal to provided number
+		///     Evaluates if given number is less than or equal to provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="maximumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="maximumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsLessThanOrEqual(this float source, float maximumValue)
 		{
 			if (source.IsNull())

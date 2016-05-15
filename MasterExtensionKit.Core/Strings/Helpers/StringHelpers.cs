@@ -6,8 +6,17 @@ using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Helpers
 {
+	/// <summary>
+	///     String Helper Static Class
+	/// </summary>
 	public static class StringHelpers
 	{
+		/// <summary>
+		///     Reads all data from a given file
+		/// </summary>
+		/// <param name="returnValue">String that is returned (OUT)</param>
+		/// <param name="fileName">Location and File Name</param>
+		/// <param name="encodingType">Optional: Encoding Type</param>
 		public static void ReadFromFile(out string returnValue, string fileName, Encoding encodingType = null)
 		{
 			if (!fileName.HasValue())
@@ -19,6 +28,7 @@ namespace MasterExtensionKit.Core.Strings.Helpers
 			{
 				encodingType = Encoding.Default;
 			}
+
 			try
 			{
 				using (var streamReader = new StreamReader(fileName, encodingType))
@@ -29,7 +39,7 @@ namespace MasterExtensionKit.Core.Strings.Helpers
 			}
 			catch (Exception)
 			{
-				//TODO: Do better Exception Handling
+				// TODO: Do better Exception Handling
 				throw;
 			}
 		}

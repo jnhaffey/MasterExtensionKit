@@ -21,23 +21,5 @@ namespace MasterExtensionKit.Core.UnitTests.Enums.Functions
 			var actualResult = myEnum.GetEnumValue(TestGuidData.GUID_D_FORMAT);
 			Assert.AreEqual(TestEnumData.GuidEnum.HAS_GUID, actualResult);
 		}
-
-		#region General String Tests
-
-		[TestMethod]
-		[ExpectedException(typeof (SourceNullException), "")]
-		public void Enum_Function_GetGuid_Null_Exception()
-		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof (SourceNullException), "")]
-		public void Enum_Function_GetGuid_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
-
-		#endregion
 	}
 }

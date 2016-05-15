@@ -6,15 +6,18 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class IsValidEmailExtension
 	{
 		/// <summary>
-		///     Checks if string is a valid Email Address
+		///     Evaluates if string is a valid Email Address
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="format"></param>
-		/// <returns></returns>
-		public static bool IsValidEmail(this string source, string format = RegExpressions.EMAIL_REG_EXPRESSION)
+		/// <param name="source">The string source</param>
+		/// <param name="format">Optional: Regular Express to validate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
+		public static bool IsValidEmail(this string source, string format = RegExpressions.EMAIL)
 		{
 			if (source.IsNull())
 			{

@@ -6,8 +6,18 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Collections.Functions
 {
+	/// <summary>
+	///     Collection Extension Method
+	/// </summary>
 	public static class SearchExtension
 	{
+		/// <summary>
+		///     Searches a collection for a term
+		/// </summary>
+		/// <typeparam name="T">The Collection Type</typeparam>
+		/// <param name="source">The collection source</param>
+		/// <param name="searchTerm">The term to search for</param>
+		/// <returns>The modified collection</returns>
 		public static IEnumerable<T> Search<T>(this IEnumerable<T> source, string searchTerm)
 		{
 			if (source.IsNull())

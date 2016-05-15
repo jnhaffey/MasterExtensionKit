@@ -1,5 +1,8 @@
 ﻿using System;
-using MasterExtensionKit.Core.Exceptions;
+using System.Collections.Generic;
+using System.Linq;
+using MasterExtensionKit.Core.Collections.Functions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
@@ -7,28 +10,27 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class RangeExtensionUnitTests
 	{
-		#region General String Tests
+		private readonly List<int> _expectedResult = new List<int> {3, 4, 5};
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Range_Null_Exception()
+		public void Collection_Function_Range_Count_Valid()
 		{
-			Assert.Fail();
+			var actualResult = TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_TEN.Range(3, 5);
+			Assert.AreEqual(_expectedResult.Count, actualResult.Count());
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Range_Empty_Invalid()
+		public void Collection_Function_Range_Matching_Valid()
 		{
-			Assert.Fail();
+			var actualResult = TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_TEN.Range(3, 5);
+			Assert.IsTrue(actualResult.SequenceEqual(_expectedResult));
 		}
 
-		#endregion
-
 		[TestMethod]
-		public void Collection_Function_Range_Test()
+		[ExpectedException(typeof(IndexOutOfRangeException), "StartIndex cannot be less than zero (0)")]
+		public void Collection_Function_Range_StartIndex_OutOfRangeException()
 		{
-			Assert.Fail("NOT IMPLEMENTED");
+			TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_TEN.Range(-1, 5);
 		}
 	}
 }

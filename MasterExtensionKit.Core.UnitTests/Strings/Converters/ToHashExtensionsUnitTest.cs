@@ -13,16 +13,16 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 
 		[TestMethod]
 		[ExpectedException(typeof(SourceNullException), "")]
-		public void String_Converter_ToHash_Null_Exception()
+		public void String_Converter_ComputeHash_Null_Exception()
 		{
-			Assert.Fail();
+			TestStringData.NULL_STRING.ComputeHash();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void String_Converter_ToHash_Empty_Invalid()
+		[ExpectedException(typeof(SourceEmptyException), "")]
+		public void String_Converter_ComputeHash_Empty_Invalid()
 		{
-			Assert.Fail();
+			TestStringData.EMPTY_STRING.ComputeHash();
 		}
 
 		#endregion

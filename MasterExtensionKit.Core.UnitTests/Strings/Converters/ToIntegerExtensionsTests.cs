@@ -14,14 +14,14 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[ExpectedException(typeof(SourceNullException), "")]
 		public void String_Converter_ToInteger_Null_Exception()
 		{
-			Assert.Fail();
+			TestStringData.NULL_STRING.ToInteger();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
+		[ExpectedException(typeof(SourceEmptyException), "")]
 		public void String_Converter_ToInteger_Empty_Invalid()
 		{
-			Assert.Fail();
+			TestStringData.EMPTY_STRING.ToInteger();
 		}
 
 		#endregion

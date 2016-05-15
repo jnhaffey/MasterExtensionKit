@@ -7,14 +7,17 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class IsValidPostalZipCode
 	{
 		/// <summary>
-		///     Checks the given string to validate as a postal code for the provided country
+		///     Evaluates the given string to validate as a postal code for the provided country
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="countryToValidate">Country Enumeration</param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The string source</param>
+		/// <param name="countryToValidate" type="Country">Country Enumeration</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsValidPostalCode(this string source, Country countryToValidate)
 		{
 			if (source.IsNull())
@@ -30,9 +33,9 @@ namespace MasterExtensionKit.Core.Strings.Validations
 			switch (countryToValidate)
 			{
 				case Country.UNITED_STATES:
-					return ValidateCode(source, RegExpressions.UNITED_STATES);
+					return ValidateCode(source, RegExpressions.POSTAL_CODE_UNITED_STATES);
 				case Country.UNITED_KINGDOM:
-					return ValidateCode(source, RegExpressions.UNITED_KINGDOM);
+					return ValidateCode(source, RegExpressions.POSTAL_CODE_UNITED_KINGDOM);
 				default:
 					throw new UnknownOrUnsupportedOptionException(ErrorMessages.UnknownUnsupportedCountryError());
 			}

@@ -7,18 +7,20 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Collections.Functions
 {
+	/// <summary>
+	///     Collection Extension Method
+	/// </summary>
 	public static class WhereIfEnumerableExtensions
 	{
 		/// <summary>
 		///     Executes the predicate, only if the condition is true
 		/// </summary>
-		/// <typeparam name="TSource"></typeparam>
-		/// <param name="source"></param>
-		/// <param name="condition"></param>
-		/// <param name="predicate"></param>
-		/// <returns></returns>
-		public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> source, bool condition,
-			Func<TSource, bool> predicate)
+		/// <typeparam name="TSource">The Source Type</typeparam>
+		/// <param name="source">The Collection Source</param>
+		/// <param name="condition">The condition flag to execute the predicate</param>
+		/// <param name="predicate">The predicate to be executed</param>
+		/// <returns>The modified collection</returns>
+		public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> source, bool condition, Func<TSource, bool> predicate)
 		{
 			if (source.IsNull())
 			{
@@ -31,13 +33,12 @@ namespace MasterExtensionKit.Core.Collections.Functions
 		/// <summary>
 		///     Executes the predicate, only if the condition is true
 		/// </summary>
-		/// <typeparam name="TSource"></typeparam>
-		/// <param name="source"></param>
-		/// <param name="condition"></param>
-		/// <param name="predicate"></param>
-		/// <returns></returns>
-		public static IQueryable<TSource> WhereIf<TSource>(this IQueryable<TSource> source, bool condition,
-			Expression<Func<TSource, bool>> predicate)
+		/// <typeparam name="TSource">The Source Type</typeparam>
+		/// <param name="source">The Collection Source</param>
+		/// <param name="condition">The condition flag to execute the predicate</param>
+		/// <param name="predicate">The predicate to be executed</param>
+		/// <returns>The modified collection</returns>
+		public static IQueryable<TSource> WhereIf<TSource>(this IQueryable<TSource> source, bool condition, Expression<Func<TSource, bool>> predicate)
 		{
 			if (source.IsNull())
 			{

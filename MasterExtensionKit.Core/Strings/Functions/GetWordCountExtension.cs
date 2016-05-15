@@ -1,13 +1,20 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using MasterExtensionKit.Core.Configuration;
 using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class GetWordCountExtension
 	{
+		/// <summary>
+		///     Gets the word count for the given string
+		/// </summary>
+		/// <param name="source">The string source</param>
+		/// <returns>Count of words</returns>
 		public static int GetWordCount(this string source)
 		{
 			if (source.IsNull())
@@ -22,11 +29,12 @@ namespace MasterExtensionKit.Core.Strings.Functions
 				var matches = regex.Matches(source);
 				count = matches.Count;
 			}
-			catch (Exception ex)
+			catch
 			{
-				//TODO: Check what Exceptions can be thrown?
+				// TODO: Make better Exception Handling
 				throw;
 			}
+
 			return count;
 		}
 	}

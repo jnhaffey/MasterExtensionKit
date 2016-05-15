@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MasterExtensionKit.Core.Collections.Functions;
 using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
@@ -7,28 +11,34 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class SearchExtensionUnitTests
 	{
-		#region General String Tests
-
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Search_Null_Exception()
+		public void Collection_Function_Search_Count_Valid()
 		{
-			Assert.Fail();
+			var expectedResult = TestCollectionData.LIST_OF_CUSTOMERS.Where(c => c.FirstName.Equals("Jason")).ToList();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Search("Jason");
+			Assert.AreEqual(expectedResult.Count(), actualResult.Count());
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Search_Empty_Invalid()
+		public void Collection_Function_Search_Count_Invalid()
 		{
-			Assert.Fail();
+			var expectedResult = new List<Customer>();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Search("Dan");
+			Assert.AreEqual(expectedResult.Count, actualResult.Count());
 		}
 
-		#endregion
+		[TestMethod]
+		public void Collection_Function_Search_InstanceType_Valid()
+		{
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Search("Jason");
+			Assert.IsInstanceOfType(actualResult, typeof(IEnumerable<Customer>));
+		}
 
 		[TestMethod]
-		public void Collection_Function_Search_Test()
+		public void Collection_Function_Search_InstanceType_Invalid()
 		{
-			Assert.Fail("NOT IMPLEMENTED");
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Search("Dan");
+			Assert.IsInstanceOfType(actualResult, typeof(IEnumerable<Customer>));
 		}
 	}
 }

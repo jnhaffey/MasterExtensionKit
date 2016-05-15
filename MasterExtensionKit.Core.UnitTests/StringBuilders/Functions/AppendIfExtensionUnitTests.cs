@@ -10,31 +10,33 @@ namespace MasterExtensionKit.Core.UnitTests.StringBuilders.Functions
 	[TestClass]
 	public class AppendIfExtensionUnitTests
 	{
+		private StringBuilder _builder;
+
 		#region General String Tests
 
 		[TestMethod]
 		[ExpectedException(typeof(SourceNullException), "")]
 		public void StringBuilder_Function_AppendIf_Null_Exception()
 		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void StringBuilder_Function_AppendIf_Empty_Invalid()
-		{
-			Assert.Fail();
+			_builder.AppendIf(true, TestStringData.ALPHA_ONLY_STRING);
 		}
 
 		#endregion
 
 		[TestMethod]
-		public void StringBuilder_Function_AppendIf_DoubleSameString()
+		public void StringBuilder_Function_AppendIf_True_Valid()
 		{
-			const string expectedResults = TestStringData.STRING_PROPER_STYLE + TestStringData.STRING_PROPER_STYLE;
-			var stringBuilder = new StringBuilder(TestStringData.STRING_PROPER_STYLE);
-			stringBuilder.AppendIf(true, TestStringData.STRING_PROPER_STYLE);
-			Assert.AreEqual(expectedResults, stringBuilder.ToString());
+			_builder = new StringBuilder();
+			_builder.AppendIf(true, TestStringData.ALPHA_ONLY_STRING);
+			Assert.AreEqual(TestStringData.ALPHA_ONLY_STRING, _builder.ToString());
+		}
+
+		[TestMethod]
+		public void StringBuilder_Function_AppendIf_False_Valid()
+		{
+			_builder = new StringBuilder();
+			_builder.AppendIf(false, TestStringData.ALPHA_ONLY_STRING);
+			Assert.AreEqual(String.Empty, _builder.ToString());
 		}
 	}
 }

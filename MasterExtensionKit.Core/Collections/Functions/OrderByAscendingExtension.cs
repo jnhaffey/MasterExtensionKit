@@ -10,16 +10,16 @@ namespace MasterExtensionKit.Core.Collections.Functions
 	/// <summary>
 	///     Collection Extension Method
 	/// </summary>
-	public static class OrderByDescendingExtension
+	public static class OrderByAscendingExtension
 	{
 		/// <summary>
-		///     Orders the collection by the given property in Descending Order
+		///     Orders the collection by the provided Property in Ascending Order
 		/// </summary>
 		/// <typeparam name="TSource">The Collection Type</typeparam>
 		/// <param name="source">The Collection Source</param>
 		/// <param name="propertyName">The property to sort on</param>
 		/// <returns>The modified collection</returns>
-		public static IEnumerable<TSource> OrderByDescending<TSource>(this IEnumerable<TSource> source, string propertyName)
+		public static IEnumerable<TSource> OrderByAscending<TSource>(this IEnumerable<TSource> source, string propertyName)
 		{
 			if (source.IsNull())
 			{
@@ -40,12 +40,13 @@ namespace MasterExtensionKit.Core.Collections.Functions
 			var propertyInfo = entities.First()
 				.GetType()
 				.GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+
 			if (propertyInfo == null)
 			{
 				throw new PropertyNotFoundException($"Unable to find property '{propertyName}' in type '{typeof(TSource)}'");
 			}
 
-			return entities.OrderByDescending(e => propertyInfo.GetValue(e, null));
+			return entities.OrderBy(e => propertyInfo.GetValue(e, null));
 		}
 	}
 }

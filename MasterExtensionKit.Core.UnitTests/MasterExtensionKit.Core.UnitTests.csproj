@@ -75,7 +75,7 @@
     <Compile Include="Collections\Functions\FilterExactExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\FilterExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\OrderByDescendingExtensionUnitTests.cs" />
-    <Compile Include="Collections\Functions\OrderByExtensionUnitTests.cs" />
+    <Compile Include="Collections\Functions\OrderByAscendingExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\PageExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\RangeExtensionUnitTests.cs" />
     <Compile Include="Collections\Functions\SearchExtensionUnitTests.cs" />

@@ -6,13 +6,16 @@ using MasterExtensionKit.Core.Strings.Functions;
 
 namespace MasterExtensionKit.Core.Strings.Validations
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class IsNumericExtension
 	{
 		/// <summary>
-		///     Checks if string is numeric
+		///     Will validate if a string is a number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsNumeric(this string source)
 		{
 			if (source.IsNull())
@@ -20,14 +23,14 @@ namespace MasterExtensionKit.Core.Strings.Validations
 				throw new SourceNullException(nameof(source));
 			}
 
-			if (source.EqualsCultureInveriant(StaticDataStore.MIN_DOUBLE_VALUE))
+			if (source.EqualsCultureInveriant(StaticDataStore.MinDoubleValue))
 			{
-				throw new MininumDoubleLimitException(ErrorMessages.OutterLimitDoubleValueError());
+				throw new MinimumDoubleLimitException(ErrorMessages.OuterLimitDoubleValueError());
 			}
 
-			if (source.EqualsCultureInveriant(StaticDataStore.MAX_DOUBLE_VALUE))
+			if (source.EqualsCultureInveriant(StaticDataStore.MaxDoubleValue))
 			{
-				throw new MaximunDoubleLimitException(ErrorMessages.OutterLimitDoubleValueError(true));
+				throw new MaximumDoubleLimitException(ErrorMessages.OuterLimitDoubleValueError(true));
 			}
 
 			float floatValue;
@@ -39,7 +42,6 @@ namespace MasterExtensionKit.Core.Strings.Validations
 			{
 				return true;
 			}
-
 
 			long longValue;
 			if (long.TryParse(source, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out longValue))

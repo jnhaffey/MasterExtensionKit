@@ -1,5 +1,7 @@
-﻿using System;
+﻿using System.Linq;
+using MasterExtensionKit.Core.Collections.Functions;
 using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
@@ -7,28 +9,25 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class OrderByDescendingExtensionUnitTests
 	{
-		#region General String Tests
-
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_OrderByDescending_Null_Exception()
+		public void Collection_Function_OrderByDescending_FirstName_NotSame_Valid()
 		{
-			Assert.Fail();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.OrderByDescending("FirstName");
+			CollectionAssert.AreNotEqual(TestCollectionData.LIST_OF_CUSTOMERS, actualResult.ToList());
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_OrderByDescending_Empty_Invalid()
+		public void Collection_Function_OrderByDescending_AccountBalance_Same_Valid()
 		{
-			Assert.Fail();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.OrderByDescending("AccountBalance");
+			CollectionAssert.AreNotEqual(TestCollectionData.LIST_OF_CUSTOMERS, actualResult.ToList());
 		}
 
-		#endregion
-
 		[TestMethod]
-		public void Collection_Function_OrderByDescendingTest()
+		[ExpectedException(typeof(PropertyNotFoundException), "Unable to find property 'Address' in type 'Customer'")]
+		public void Collection_Function_OrderByDescending_Address_PropertyNotFoundException()
 		{
-			Assert.Fail("NOT IMPLEMENTED");
+			TestCollectionData.LIST_OF_CUSTOMERS.OrderByDescending("Address");
 		}
 	}
 }

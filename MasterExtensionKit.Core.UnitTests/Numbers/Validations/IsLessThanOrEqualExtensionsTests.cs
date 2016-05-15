@@ -1,5 +1,4 @@
-﻿using MasterExtensionKit.Core.Exceptions;
-using MasterExtensionKit.Core.Numbers.Validations;
+﻿using MasterExtensionKit.Core.Numbers.Validations;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,23 +7,7 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 	[TestClass]
 	public class IsLessThanOrEqualExtensionsTests
 	{
-		#region General String Tests
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Number_Validation_IsLessThanOrEqual_Null_Exception()
-		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Number_Validation_IsLessThanOrEqual_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
-
-		#endregion
+		#region Integer Tests
 
 		[TestMethod]
 		public void Number_Validation_Integer_NegativeTwo_IsLessThanOrEqual_NegativeTwo_True()
@@ -92,6 +75,10 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 			Assert.IsTrue(TestNumberData.INTEGER_POSITIVE_TWO.IsLessThanOrEqual(TestNumberData.INTEGER_POSITIVE_TWO));
 		}
 
+		#endregion
+
+		#region Decimal Tests
+
 		[TestMethod]
 		public void Number_Validation_Decimal_NegativeTwo_IsLessThanOrEqual_NegativeTwo_True()
 		{
@@ -158,6 +145,10 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 			Assert.IsTrue(TestNumberData.DECIMAL_POSITIVE_TWO.IsLessThanOrEqual(TestNumberData.DECIMAL_POSITIVE_TWO));
 		}
 
+		#endregion
+
+		#region Float Tests
+
 		[TestMethod]
 		public void Number_Validation_Float_NegativeTwo_IsLessThanOrEqual_NegativeTwo_True()
 		{
@@ -223,5 +214,7 @@ namespace MasterExtensionKit.Core.UnitTests.Numbers.Validations
 		{
 			Assert.IsTrue(TestNumberData.FLOAT_POSITIVE_TWO.IsLessThanOrEqual(TestNumberData.FLOAT_POSITIVE_TWO));
 		}
+
+		#endregion
 	}
 }

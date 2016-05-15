@@ -5,14 +5,17 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class ToDecimalExtension
 	{
 		/// <summary>
-		///     Convert a string to a decimal
+		///     Convert a string to an decimal
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="ignoreError"></param>
-		/// <returns></returns>
+		/// <param name="source">The source string</param>
+		/// <param name="ignoreError">Optional: Will ignore exceptions</param>
+		/// <returns>Returns the decimal of the string value</returns>
 		public static decimal? ToDecimal(this string source, bool ignoreError = true)
 		{
 			if (source.IsNull())
@@ -21,6 +24,7 @@ namespace MasterExtensionKit.Core.Strings.Converters
 			}
 
 			decimal? valueToReturn = null;
+
 			try
 			{
 				valueToReturn = decimal.Parse(source);
@@ -31,8 +35,10 @@ namespace MasterExtensionKit.Core.Strings.Converters
 				{
 					return null;
 				}
+
 				throw new ConversionFailureException(ErrorMessages.GenerateConversionError("string", "decimal"), ex);
 			}
+
 			return valueToReturn;
 		}
 	}

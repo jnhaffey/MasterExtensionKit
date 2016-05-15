@@ -9,24 +9,6 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class WhereIfEnumerableExtensionsTests
 	{
-		#region General String Tests
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_WhereIf_Null_Exception()
-		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_WhereIf_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
-
-		#endregion
-
 		[TestMethod]
 		public void Collection_Function_WhereIf_Include_AccountBalanceUnder100_And_NameContainsLetterA()
 		{

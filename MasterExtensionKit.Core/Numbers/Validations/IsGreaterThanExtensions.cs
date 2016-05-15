@@ -3,14 +3,17 @@ using MasterExtensionKit.Core.Objects.Validations;
 
 namespace MasterExtensionKit.Core.Numbers.Validations
 {
+	/// <summary>
+	///     Number Extension Method
+	/// </summary>
 	public static class IsGreaterThanExtensions
 	{
 		/// <summary>
-		///     Checks if given number is greater than provided number
+		///     Evaluates if given number is greater than provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="minimumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="minimumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsGreaterThan(this int source, int minimumValue)
 		{
 			if (source.IsNull())
@@ -22,11 +25,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		}
 
 		/// <summary>
-		///     Checks if given number is greater than provided number
+		///     Evaluates if given number is greater than provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="minimumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="minimumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsGreaterThan(this decimal source, decimal minimumValue)
 		{
 			if (source.IsNull())
@@ -38,11 +41,11 @@ namespace MasterExtensionKit.Core.Numbers.Validations
 		}
 
 		/// <summary>
-		///     Checks if given number is greater than provided number
+		///     Evaluates if given number is greater than provided number
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="minimumValue"></param>
-		/// <returns>Boolean</returns>
+		/// <param name="source">The source number</param>
+		/// <param name="minimumValue">The number to evaluate against</param>
+		/// <returns>Boolean indicating if it passes or not</returns>
 		public static bool IsGreaterThan(this float source, float minimumValue)
 		{
 			if (source.IsNull())

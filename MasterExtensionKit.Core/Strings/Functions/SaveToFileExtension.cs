@@ -1,23 +1,25 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using MasterExtensionKit.Core.Configuration;
 using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Objects.Validations;
 using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class SaveToFileExtension
 	{
 		/// <summary>
-		///     Saves the string value to file
+		///     Saves the string value to a given file
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="fileName"></param>
-		/// <param name="append"></param>
-		/// <param name="encoderType"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <param name="fileName">Location and File Name</param>
+		/// <param name="append">Optional: Append file</param>
+		/// <param name="encoderType">Optional: Encoding Type</param>
+		/// <returns>Boolean indicating if the data was successfully saved</returns>
 		public static bool SaveToFile(this string source, string fileName, bool append = false, Encoding encoderType = null)
 		{
 			if (source.IsNull())
@@ -34,6 +36,7 @@ namespace MasterExtensionKit.Core.Strings.Functions
 			{
 				encoderType = Encoding.Default;
 			}
+
 			try
 			{
 				using (var streamwriter = new StreamWriter(fileName, append, encoderType))
@@ -43,11 +46,12 @@ namespace MasterExtensionKit.Core.Strings.Functions
 					streamwriter.Close();
 				}
 			}
-			catch (Exception ex)
+			catch
 			{
-				//TODO: Do better Exception Handling
+				// TODO: Make better Exception Handling
 				throw;
 			}
+
 			return true;
 		}
 	}

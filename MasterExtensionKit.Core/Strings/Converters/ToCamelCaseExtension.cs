@@ -4,13 +4,16 @@ using MasterExtensionKit.Core.Strings.Functions;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class ToCamelCaseExtension
 	{
 		/// <summary>
 		///     Converts the given string to Camel Case Style
 		/// </summary>
-		/// <param name="source"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <returns>The modified string</returns>
 		public static string ToCamelCase(this string source)
 		{
 			if (source.IsNull())

@@ -6,14 +6,17 @@ using MasterExtensionKit.Core.Strings.Validations;
 
 namespace MasterExtensionKit.Core.Strings.Functions
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class EncryptDecryptExtensions
 	{
 		/// <summary>
 		///     Encrypts the given string using the provided key
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="key"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <param name="key">The key to use to encrypt</param>
+		/// <returns>The encrypted string</returns>
 		public static string Encrypt(this string source, string key)
 		{
 			if (!source.HasValue())
@@ -38,9 +41,9 @@ namespace MasterExtensionKit.Core.Strings.Functions
 		/// <summary>
 		///     Decrypts the given string using the provided key
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="key"></param>
-		/// <returns></returns>
+		/// <param name="source">The string source</param>
+		/// <param name="key">The key to use to decrypt</param>
+		/// <returns>The decrypted string</returns>
 		public static string Decrypt(this string source, string key)
 		{
 			string result = null;
@@ -62,15 +65,16 @@ namespace MasterExtensionKit.Core.Strings.Functions
 				var rsa = new RSACryptoServiceProvider(cspp) {PersistKeyInCsp = true};
 
 				var decryptArray = source.Split(new[] {"-"}, StringSplitOptions.None);
+
 				var decryptByteArray = Array.ConvertAll(decryptArray, s => Convert.ToByte(byte.Parse(s, NumberStyles.HexNumber)));
 
 				var bytes = rsa.Decrypt(decryptByteArray, true);
 
 				result = Encoding.UTF8.GetString(bytes);
 			}
-			catch (Exception ex)
+			catch
 			{
-				//HANDLED EXCEPTIONS BETTER
+				// TODO: Make better Exception Handling
 				throw;
 			}
 

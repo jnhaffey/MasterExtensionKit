@@ -8,24 +8,6 @@ namespace MasterExtensionKit.Core.UnitTests.Enums.Functions
 	[TestClass]
 	public class EnumDescriptionExtensionUnitTests
 	{
-		#region General String Tests
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Enum_Function_GetDescription_Null_Exception()
-		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Enum_Function_GetDescription_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
-
-		#endregion
-
 		[TestMethod]
 		public void Enum_Function_NoEnumDescription_True()
 		{

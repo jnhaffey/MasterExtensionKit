@@ -1,4 +1,5 @@
-﻿using MasterExtensionKit.Core.Exceptions;
+﻿using System;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Converters;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,12 +15,15 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[ExpectedException(typeof (SourceNullException), "")]
 		public void String_Converter_ToProperCase_Null_Exception()
 		{
+			TestStringData.NULL_STRING.ToProperCase();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof (SourceNullException), "")]
+		[ExpectedException(typeof(SourceEmptyException),"")]
 		public void String_Converter_ToProperCase_Empty_Invalid()
 		{
+			var actualResult = TestStringData.EMPTY_STRING.ToProperCase();
+			Assert.AreEqual(String.Empty, actualResult);
 		}
 
 		#endregion

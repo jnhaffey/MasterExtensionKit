@@ -2,29 +2,32 @@
 
 namespace MasterExtensionKit.Core.Attributes
 {
+	/// <summary>
+	///     Holds a Guid Value for a given Enumeration Value
+	/// </summary>
 	[AttributeUsage(AttributeTargets.Field)]
 	public class EnumGuidAttribute : Attribute
 	{
 		/// <summary>
-		///     Constructor used to initiate a Guid Attribute
+		///     Initializes a new instance of the <see cref="EnumGuidAttribute" /> class
 		/// </summary>
-		/// <param name="guid">String value converted to Guid and held</param>
+		/// <param name="guid">This is the guid that will be stored</param>
 		public EnumGuidAttribute(string guid)
 		{
-			EnumGuid = string.IsNullOrWhiteSpace(guid) ? Guid.Empty : Guid.Parse(guid);
+			this.EnumGuid = string.IsNullOrWhiteSpace(guid) ? Guid.Empty : Guid.Parse(guid);
 		}
 
 		/// <summary>
-		///     Constructor used to initiate a Guid Attribute
+		///     Initializes a new instance of the <see cref="EnumGuidAttribute" /> class
 		/// </summary>
-		/// <param name="guid">Guild to be held</param>
+		/// <param name="guid">This is the guid that will be stored</param>
 		public EnumGuidAttribute(Guid guid)
 		{
-			EnumGuid = guid;
+			this.EnumGuid = guid;
 		}
 
 		/// <summary>
-		///     Holds the Guid Value for the Enum
+		///     Gets and Holds the Guid Value for the Enum
 		/// </summary>
 		public Guid EnumGuid { get; private set; }
 	}

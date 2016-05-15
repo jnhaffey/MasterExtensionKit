@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Threading;
 using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Objects.Validations;
@@ -7,13 +6,16 @@ using MasterExtensionKit.Core.Strings.Functions;
 
 namespace MasterExtensionKit.Core.Strings.Converters
 {
+	/// <summary>
+	///     String Extension Method
+	/// </summary>
 	public static class ToPascalCaseExtensions
 	{
 		/// <summary>
 		///     Converts the given string to Pascal Case Style
 		/// </summary>
-		/// <param name="source"></param>
-		/// <returns>String</returns>
+		/// <param name="source">The source string</param>
+		/// <returns>The modified string</returns>
 		public static string ToPascalCase(this string source)
 		{
 			if (source.IsNull())

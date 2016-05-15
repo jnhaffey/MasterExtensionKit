@@ -2,9 +2,19 @@
 
 namespace MasterExtensionKit.Core.Configuration
 {
-	internal class StaticDataStore
+	/// <summary>
+	///     Static Data Store
+	/// </summary>
+	internal static class StaticDataStore
 	{
-		internal static readonly string MAX_DOUBLE_VALUE = double.MaxValue.ToString(CultureInfo.InvariantCulture);
-		internal static readonly string MIN_DOUBLE_VALUE = double.MinValue.ToString(CultureInfo.InvariantCulture);
+		/// <summary>
+		///     Provides the Double Maximum Value in String Format
+		/// </summary>
+		internal static readonly string MaxDoubleValue = double.MaxValue.ToString(CultureInfo.InvariantCulture);
+
+		/// <summary>
+		///     Provides the Double Minimum Value in String Format
+		/// </summary>
+		internal static readonly string MinDoubleValue = double.MinValue.ToString(CultureInfo.InvariantCulture);
 	}
 }

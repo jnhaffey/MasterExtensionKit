@@ -9,24 +9,6 @@ namespace MasterExtensionKit.Core.UnitTests.Datetimes.Functions
 	[TestClass]
 	public class AgeExtensionsUnitTests
 	{
-		#region General String Tests
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Datetime_Function_Age_Null_Exception()
-		{
-			Assert.Fail();
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Datetime_Function_Age_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
-
-		#endregion
-
 		[TestMethod]
 		public void Datetime_Function_Age_FiveYearsAgoYesterday_Five()
 		{

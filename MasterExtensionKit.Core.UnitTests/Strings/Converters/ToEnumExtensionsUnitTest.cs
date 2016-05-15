@@ -1,4 +1,5 @@
-﻿using MasterExtensionKit.Core.Exceptions;
+﻿using System;
+using MasterExtensionKit.Core.Exceptions;
 using MasterExtensionKit.Core.Strings.Converters;
 using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,14 +15,21 @@ namespace MasterExtensionKit.Core.UnitTests.Strings.Converters
 		[ExpectedException(typeof(SourceNullException), "")]
 		public void String_Converter_ToEnum_Null_Exception()
 		{
-			Assert.Fail();
+			TestStringData.NULL_STRING.ToEnum<TestEnumData.UserType>();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void String_Converter_ToEnum_Empty_Invalid()
+		public void String_Converter_ToEnum_Empty_IgnoreError_Invalid()
 		{
-			Assert.Fail();
+			var actualResult = TestStringData.EMPTY_STRING.ToEnum<TestEnumData.UserType>();
+			Assert.AreEqual(TestEnumData.UserType.NONE, actualResult);
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(EnumNotFoundFromStringException), "No enum value was found with value: User")]
+		public void String_Converter_ToEnum_Empty_IncludeError_Invalid()
+		{
+			TestStringData.EMPTY_STRING.ToEnum<TestEnumData.UserType>(false);
 		}
 
 		#endregion

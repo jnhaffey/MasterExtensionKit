@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MasterExtensionKit.Core.Collections.Functions;
 using MasterExtensionKit.Core.Exceptions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
@@ -7,28 +11,27 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class FilterExtensionUnitTests
 	{
-		#region General String Tests
-
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Filter_Null_Exception()
+		public void Collection_Function_Filter_FirstName_NotFound_Valid()
 		{
-			Assert.Fail();
+			var expectedResults = new List<Customer>();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Filter("FirstName", "Robert").ToList();
+			CollectionAssert.AreEqual(expectedResults, actualResult);
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_Filter_Empty_Invalid()
+		public void Collection_Function_Filter_FirstName_Same_Valid()
 		{
-			Assert.Fail();
+			var expectedResult = TestCollectionData.LIST_OF_CUSTOMERS.Where(c => c.FirstName.Contains("ll")).ToList();
+			var actualResult = TestCollectionData.LIST_OF_CUSTOMERS.Filter("FirstName", "ll").ToList();
+			CollectionAssert.AreEqual(expectedResult, actualResult);
 		}
 
-		#endregion
-
 		[TestMethod]
-		public void Collection_Function_Filter_Test()
+		[ExpectedException(typeof(PropertyNotFoundException), "Unable to find property 'Address' in type 'Customer'")]
+		public void Collection_Function_Filter_Address_PropertyNotFoundException()
 		{
-			Assert.Fail("NOT IMPLEMENTED");
+			TestCollectionData.LIST_OF_CUSTOMERS.Filter("Address", "123 High Stret");
 		}
 	}
 }

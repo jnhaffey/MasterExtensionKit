@@ -1,5 +1,7 @@
-﻿using System;
-using MasterExtensionKit.Core.Exceptions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MasterExtensionKit.Core.Collections.Functions;
+using MasterExtensionKit.Core.UnitTests._Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
@@ -7,22 +9,16 @@ namespace MasterExtensionKit.Core.UnitTests.Collections.Functions
 	[TestClass]
 	public class DistinctByExtensionUnitTests
 	{
-		#region General String Tests
-
 		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_DistinctBy_Null_Exception()
+		public void Collection_Function_DistinctBy_ListOfNumbers_SomeDuplicates_ReturnsSignalsList()
 		{
-			Assert.Fail();
-		}
+			var modifiedTestData = new List<int>();
+			modifiedTestData.AddRange(TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_TEN);
+			modifiedTestData.AddRange(TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_FIVE);
 
-		[TestMethod]
-		[ExpectedException(typeof(SourceNullException), "")]
-		public void Collection_Function_DistinctBy_Empty_Invalid()
-		{
-			Assert.Fail();
-		}
+			var actualResult = modifiedTestData.DistinctBy(m => m).ToList();
 
-		#endregion
+			CollectionAssert.AreEquivalent(TestCollectionData.ORDER_OF_NUMBERS_ONE_THRU_TEN, actualResult);
+		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace MasterExtensionKit.Core.UnitTests._Shared
@@ -19,9 +18,10 @@ namespace MasterExtensionKit.Core.UnitTests._Shared
 			new Customer {FirstName = "Fred", AccountBalance = 0.00M}
 		};
 
-		public static readonly List<int> ORDER_OF_NUMBERS_1_THRU_5 = new List<int> {1, 2, 3, 4, 5};
-		public static readonly List<int> ORDER_OF_NUMBERS_6_THRU_10 = new List<int> { 6, 7, 8, 9, 10 };
-		public static readonly List<int> ORDER_OF_NUMBERS_1_THRU_10 = new List<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		public static readonly List<int> ORDER_OF_NUMBERS_ONE_THRU_FIVE = new List<int> {1, 2, 3, 4, 5};
+		public static readonly List<int> ORDER_OF_NUMBERS_SIX_THRU_TEN = new List<int> {6, 7, 8, 9, 10};
+		public static readonly List<int> ORDER_OF_NUMBERS_ONE_THRU_TEN = new List<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		public static readonly List<int> ORDER_OF_NUMBERS_TEN_THRU_ONE = new List<int> {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
 	}
 
 	public class Customer
