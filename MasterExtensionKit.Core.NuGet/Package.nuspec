@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MasterExtensionKit.Core</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <title>Master Extension Kit - Core</title>
     <authors>Jason N Haffey</authors>
     <owners>Jason N Haffey</owners>
@@ -35,8 +35,11 @@
   </metadata>
   <files>
     <file src="..\MasterExtensionKit.Core\bin\Release-Net40\MasterExtensionKit.Core.dll" target="lib\net40" />
+	<file src="..\MasterExtensionKit.Core\bin\Release-Net40\MasterExtensionKit.Core.XML" target="lib\net40" />
 	<file src="..\MasterExtensionKit.Core\bin\Release-Net45\MasterExtensionKit.Core.dll" target="lib\net45" />
+	<file src="..\MasterExtensionKit.Core\bin\Release-Net45\MasterExtensionKit.Core.XML" target="lib\net45" />
 	<file src="..\MasterExtensionKit.Core\bin\Release-Net46\MasterExtensionKit.Core.dll" target="lib\net46" />
+	<file src="..\MasterExtensionKit.Core\bin\Release-Net46\MasterExtensionKit.Core.XML" target="lib\net46" />
     <file src="tools\" target="tools" />
     <file src="content\" target="content" />
   </files>
