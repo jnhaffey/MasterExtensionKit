@@ -1,5 +1,5 @@
 ### FUTURE ITEMS
 
 * PROJECTS / NAMESPACES
-    * Objects
-    * Types
+    * MasterExtensionKit.Web (New Project)
+    * MasterExtensionKit.Core (Portable)
