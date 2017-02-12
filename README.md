@@ -1,3 +1,5 @@
+# NOTE: I will be migrating this over to a new collection which an be found [here](https://github.com/jnhaffey/StACS.Core) 
+
 # Master Extension Kit Wiki
 
 The Master Extension Kit is an attempt to bring together a wide range of extensions that developers create and use.  Many times, developers will write an extension that another developer somewhere else has already created.  The hope of this collection is to normalize these extensions, test them by many developers, and make them available to the community so all of us can write less code.
